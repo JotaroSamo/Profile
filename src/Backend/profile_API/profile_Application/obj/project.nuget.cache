@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "dgSpecHash": "T0Th2hpXQNs=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\a.samoshuk\\RiderProjects\\profile\\src\\Backend\\profile_API\\profile_Application\\profile_Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\csharpfunctionalextensions\\3.4.3\\csharpfunctionalextensions.3.4.3.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.0\\microsoft.entityframeworkcore.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.0\\microsoft.entityframeworkcore.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.0\\microsoft.entityframeworkcore.analyzers.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\9.0.0\\microsoft.entityframeworkcore.relational.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.0\\microsoft.extensions.caching.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.0\\microsoft.extensions.caching.memory.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.0\\microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0\\microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.extensions.logging\\9.0.0\\microsoft.extensions.logging.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.extensions.options\\9.0.0\\microsoft.extensions.options.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0\\microsoft.extensions.primitives.9.0.0.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\npgsql\\9.0.2\\npgsql.9.0.2.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.2\\npgsql.entityframeworkcore.postgresql.9.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

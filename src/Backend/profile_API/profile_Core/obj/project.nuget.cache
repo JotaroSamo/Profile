@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "651+K3TFMg4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\a.samoshuk\\RiderProjects\\profile\\src\\Backend\\profile_API\\profile_Core\\profile_Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\csharpfunctionalextensions\\3.4.3\\csharpfunctionalextensions.3.4.3.nupkg.sha512",
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

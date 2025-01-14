@@ -1,0 +1,12 @@
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\bin\Debug\net9.0\profile_MapperModel.deps.json
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\bin\Debug\net9.0\profile_MapperModel.dll
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\bin\Debug\net9.0\profile_MapperModel.pdb
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\obj\Debug\net9.0\profile_MapperModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\obj\Debug\net9.0\profile_MapperModel.AssemblyInfoInputs.cache
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\obj\Debug\net9.0\profile_MapperModel.AssemblyInfo.cs
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\obj\Debug\net9.0\profile_MapperModel.csproj.CoreCompileInputs.cache
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\obj\Debug\net9.0\profile_MapperModel.dll
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\obj\Debug\net9.0\refint\profile_MapperModel.dll
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\obj\Debug\net9.0\profile_MapperModel.pdb
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\obj\Debug\net9.0\ref\profile_MapperModel.dll
+C:\Users\a.samoshuk\RiderProjects\profile_API\profile_MapperModel\obj\Debug\net9.0\profile_MapperModel.sourcelink.json
