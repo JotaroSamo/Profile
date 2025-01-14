@@ -1,14 +1,13 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 
-namespace profile_Infastructure;
+namespace profile_API.Infastructure;
 
 public static class MigrationManager
 {
-    public static WebApplicationBuilder MigrateDatabase<TContext>(this WebApplicationBuilder builder, List<Action<TContext, IServiceProvider, ILogger<TContext>>> seeders)
+    public static WebApplication MigrateDatabase<TContext>(this WebApplication builder, List<Action<TContext, IServiceProvider, ILogger<TContext>>> seeders)
         where TContext : DbContext
     {
-        using var scope = builder.Services.BuildServiceProvider().CreateScope();
+        using var scope = builder.Services.CreateScope();
 
         var services = scope.ServiceProvider;
         var context = services.GetRequiredService<TContext>();

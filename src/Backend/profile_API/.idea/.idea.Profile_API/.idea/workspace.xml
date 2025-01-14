@@ -8,7 +8,161 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1cf44d2-f6b7-4273-8e31-ec742b410db9" name="Changes" comment="" />
+    <list default="true" id="e1cf44d2-f6b7-4273-8e31-ec742b410db9" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile_API/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile_API/Infastructure/Configuration/HealthCheckConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile_API/Infastructure/HealthChecks/HttpResourceHealthCheck.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile_Application/Chat/GetUsersInChat/GetUsersInChatQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile_Application/Chat/GetUsersInChat/GetUsersInChatQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Profile_API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Profile_API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/Hub/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/Hub/ChatHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/Infastructure/Configuration/DependencyInjectionConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/Infastructure/Configuration/DependencyInjectionConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/Infastructure/MigrationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/Infastructure/MigrationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_API.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_API.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_DataAccess.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_DataAccess.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/bin/Debug/net9.0/profile_Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/profile_API.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/ref/profile_API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/ref/profile_API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/refint/profile_API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/Debug/net9.0/refint/profile_API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/profile_API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/profile_API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_API/profile_API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/profile_API/profile_API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/Chat/DeleteConnection/DeleteConnectionCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/Chat/DeleteConnection/DeleteConnectionCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/Chat/DeleteConnection/DeleteConnectionCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/Chat/DeleteConnection/DeleteConnectionCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Application.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Application.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_DataAccess.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_DataAccess.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/bin/Debug/net9.0/profile_Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/profile_Application.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/ref/profile_Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/ref/profile_Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/refint/profile_Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/obj/Debug/net9.0/refint/profile_Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Application/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/Chat/IChatService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/Chat/IChatService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/Chat/IUserChatConnectionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/Chat/IUserChatConnectionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_Core.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_Core.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_MapperModel.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/bin/Debug/net9.0/profile_MapperModel.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/profile_Core.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/ref/profile_Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/ref/profile_Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/refint/profile_Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/obj/Debug/net9.0/refint/profile_Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Core/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Core/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/DataAccessDependencies.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/DataAccessDependencies.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_DataAccess.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_DataAccess.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_DataAccess.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_DataAccess.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_MapperModel.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/bin/Debug/net9.0/profile_MapperModel.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/profile_DataAccess.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/ref/profile_DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/ref/profile_DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/refint/profile_DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/Debug/net9.0/refint/profile_DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_DataAccess/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/profile_DataAccess/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Domain/bin/Debug/net9.0/profile_Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Domain/bin/Debug/net9.0/profile_Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Domain/bin/Debug/net9.0/profile_Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Domain/bin/Debug/net9.0/profile_Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/profile_Domain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/ref/profile_Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/ref/profile_Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/refint/profile_Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Domain/obj/Debug/net9.0/refint/profile_Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Domain/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_MapperAndModel/Mapper/ChatProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_MapperAndModel/Mapper/ChatProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_MapperAndModel/Mapper/MessageProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_MapperAndModel/Mapper/MessageProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_MapperAndModel/Mapper/PostProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_MapperAndModel/Mapper/PostProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_MapperAndModel/Mapper/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_MapperAndModel/Mapper/UserProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_MapperAndModel/bin/Debug/net9.0/profile_MapperAndModel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_MapperAndModel/bin/Debug/net9.0/profile_MapperAndModel.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_MapperAndModel/bin/Debug/net9.0/profile_MapperAndModel.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_MapperAndModel/bin/Debug/net9.0/profile_MapperAndModel.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_MapperAndModel/obj/Debug/net9.0/profile_MapperAndModel.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_MapperAndModel/obj/Debug/net9.0/profile_MapperAndModel.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_MapperAndModel/obj/Debug/net9.0/profile_MapperAndModel.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_MapperAndModel/obj/Debug/net9.0/profile_MapperAndModel.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_MapperAndModel/obj/Debug/net9.0/profile_MapperAndModel.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_MapperAndModel/obj/Debug/net9.0/profile_MapperAndModel.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_MapperAndModel/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/profile_MapperAndModel/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/Chat/ChatService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/Chat/ChatService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/Chat/UserChatConnectionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/Chat/UserChatConnectionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_DataAccess.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_DataAccess.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Service.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Service.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/bin/Debug/net9.0/profile_Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/profile_Service.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/ref/profile_Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/ref/profile_Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/refint/profile_Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/obj/Debug/net9.0/refint/profile_Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile_Service/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/profile_Service/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +172,7 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -27,19 +181,25 @@
     &quot;assignee&quot;: &quot;JotaroSamo&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/JotaroSamo/profile.git&quot;,
-    &quot;accountId&quot;: &quot;48767c1e-6864-4df7-b5b4-120d0dfbbf39&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/JotaroSamo/Profile.git",
+    "accountId": "48767c1e-6864-4df7-b5b4-120d0dfbbf39"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1c43885af44c456b99abb26d0a4b7c9682928/36/9ea605cb/IHubClients`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1c43885af44c456b99abb26d0a4b7c9682928/88/bc50767c/IUserIdProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58d1099a37674f1787df88c83af769da121e00/e8/33878748/Result`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1022293a72277efbb4fa98616a0b5fe5114b1ed458c455aa5b85f584a198e41/ConfigurationReaderOptions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/12f8d680aa1c5ae78dc1fb7cf8212be01e323372dbe3b9b87360e27c58936a/IRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/47bae868829c8916de851144958a61a83c89f3c73337f25f5e4d1def32d532ad/LoggerConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/543518303967b352e70537af9e14ff53294389/LibraryImports.g.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/609f5e4b81d6a237ec1c49d7345dd3b9813582b6d0aba4a097dac5d687e89f/MongoDbHealthCheckBuilderExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/96143ce5b91cb8ad345ed6e188f9b9ea5a9275083a5296f670acfd438e38be/ConfigurationLoggerConfigurationExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e059b3e433793d17ac27582d8eca2efd98af2b63fc51448a14ff845a352078/HubConnectionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f16564c8c4b61e6ea398fe412680c6b795b266584ccf6a362aed712dc4d2b387/WebApplication.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/profile_API/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -106,6 +266,31 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <configuration name="profile_API/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="profile_api" />
+          <option name="containerName" value="profile_api" />
+          <option name="contextFolderPath" value="C:\Users\a.samoshuk\RiderProjects\profile\src\Backend\profile_API" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostIp" value="127.0.0.1" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="profile_API/Dockerfile" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -120,6 +305,7 @@
       <workItem from="1736833264959" duration="30973000" />
       <workItem from="1736869968491" duration="72000" />
       <workItem from="1736870128226" duration="240000" />
+      <workItem from="1736870383757" duration="6079000" />
     </task>
     <task id="LOCAL-00001" summary="save">
       <option name="closed" value="true" />
@@ -185,7 +371,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736870314048</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="init">
+      <option name="closed" value="true" />
+      <created>1736870433955</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1736870433955</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +387,17 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="save" />
@@ -200,24 +405,5 @@
     <MESSAGE value="mig" />
     <MESSAGE value="init" />
     <option name="LAST_COMMIT_MESSAGE" value="init" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/profile_Service/Chat/ChatService.cs</url>
-          <line>50</line>
-          <properties documentPath="C:\Users\a.samoshuk\RiderProjects\profile_API\profile_Service\Chat\ChatService.cs" containingFunctionPresentation="Method 'GetChatMessage'">
-            <startOffsets>
-              <option value="1662" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1722" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

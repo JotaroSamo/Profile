@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
+using HealthChecks.UI.Client;
 using MediatR;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using profile_API.Context;
 using profile_API.Hub;
 using profile_API.Infastructure;
@@ -20,23 +22,18 @@ using Serilog;
 // Создание билдера приложения
 var builder = WebApplication.CreateBuilder(args);
 
-// Настройка логирования
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .CreateLogger();
+builder.Configuration.AddJsonFile("appsettings.json");
 
 // Регистрация службы Serilog
-builder.Host.UseSerilog();
+builder.Host.UseSerilog((context, config) => config.ReadFrom.Configuration(context.Configuration));
 
 
-// Миграция БД
-builder.MigrateDatabase(new List<Action<ProfileDbContext, IServiceProvider, ILogger<ProfileDbContext>>>());
 
 // Добавление сервисов в контейнер
 ConfigureServices(builder.Services, builder.Configuration);
 
 // Создание приложения
-var app = builder.Build();
+var app = builder.Build().MigrateDatabase(new List<Action<ProfileDbContext, IServiceProvider, ILogger<ProfileDbContext>>>());
 
 // Настройка HTTP request pipeline
 ConfigureMiddleware(app);
@@ -56,14 +53,14 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
         .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
     services.AddEndpointsApiExplorer();
     services.AddSwaggerGen();
-    
+    services.AddApplicationHealthChecks(builder.Configuration);
     // Регистрация других зависимостей
     services.AddServiceDependencies();
     services.AddDataAccessDependencies(configuration);
     services.AddHttpClient();
     services.AddHttpContextAccessor();
-    services.AddScoped<IHttpContextService, HttpContextService>();
     services.AddAuth(configuration, paramAuth.Get<Auth>());
+    services.AddDependencyInjection();
     services.AddSignalR();
 }
 
@@ -85,6 +82,11 @@ void ConfigureMiddleware(WebApplication app)
 
     app.UseEndpoints(endpoints =>
     {
+        endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+        {
+            Predicate = _ => true,
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+        });
         endpoints.MapHub<ChatHub>("/chathub");
         endpoints.MapControllers();
     });

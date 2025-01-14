@@ -1,4 +1,4 @@
-using profile_DataAccess.Entity.Profile;
+using profile_DataAccess.Context.Entity.Profile;
 using profile_Domain.Profile;
 using profile_MapperModel.Profile.User;
 

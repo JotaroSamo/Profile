@@ -11,7 +11,7 @@ public static class DataAccessDependencies
 {
     public static IServiceCollection AddDataAccessDependencies(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<ProfileDbContext>(options => options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+        services.AddDbContext<ProfileDbContext>(options => options.UseNpgsql(configuration.GetConnectionString("Profiles")));
         services.AddAutoMapper(typeof(UserProfile).Assembly);
         return services;
     }

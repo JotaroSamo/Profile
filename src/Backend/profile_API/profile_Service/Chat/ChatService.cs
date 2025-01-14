@@ -7,6 +7,7 @@ using profile_DataAccess.Context;
 using profile_DataAccess.Context.Entity.Chat;
 using profile_Domain.Chat;
 using profile_MapperModel.Profile.Chat;
+using profile_MapperModel.Profile.User;
 
 namespace profile_Service.Chat;
 
@@ -56,4 +57,6 @@ public class ChatService : IChatService
         }
         return Result.Success(chat);
     }
+
+    
 }

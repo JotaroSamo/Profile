@@ -1,13 +1,16 @@
+using CSharpFunctionalExtensions;
 using profile_Application.Core.Commands.Contracts;
 
 namespace profile_Application.Chat.DeleteConnection;
 
-public class DeleteConnectionCommand : ICommand<bool>
+public class DeleteConnectionCommand : ICommand<Result<string>>
 {
-    public string ConnectionId { get; }
+    public Guid ChatId { get; }
+    public Guid UserId { get; }
 
-    public DeleteConnectionCommand(string connectionId)
+    public DeleteConnectionCommand(Guid chatId, Guid userId)
     {
-        ConnectionId = connectionId;
+        ChatId = chatId;
+        UserId = userId;
     }
 }
