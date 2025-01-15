@@ -29,8 +29,8 @@ public class SendNotificationCommandHandler : ICommandHandler<SendNotificationCo
         try
         {
             _logger.LogInformation("Sending notification to user {UserId} for message {MessageId}", request.Message.UserId, request.Message.PublicId);
-
-            await _hubContext.Clients.User(request.Message.UserId.ToString()).SendAsync("ReceiveNotification", model);
+            
+            await _hubContext.Clients.User(request.UserId.ToString()).SendAsync("ReceiveNotification", model);
             
             _logger.LogInformation("Notification successfully sent to user {UserId}", request.Message.UserId);
             return Result.Success();

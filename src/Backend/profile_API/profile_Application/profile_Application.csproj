@@ -19,7 +19,6 @@
       <Folder Include="Profile\Post\Command\" />
       <Folder Include="Profile\Post\Query\" />
       <Folder Include="Profile\User\Command\" />
-      <Folder Include="Profile\User\Query\" />
     </ItemGroup>
 
     <ItemGroup>

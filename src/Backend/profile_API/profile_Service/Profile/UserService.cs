@@ -12,6 +12,7 @@ using profile_MapperModel.Profile.User;
 
 namespace profile_Service.Profile;
 
+
 public class UserService : IUserService
 {
     private readonly ProfileDbContext _profileDbContext;
@@ -71,6 +72,23 @@ public class UserService : IUserService
             return Result.Failure<UserChats>("User not found");
         }
         return Result.Success(user);
+    }
+
+    public async Task<Result<List<BaseUser>>> FindUsersByLogin(string login)
+    {
+        try
+        {
+            var keyword = $"%{login}%";
+            var query = _profileDbContext.Users.Where(x => EF.Functions.ILike(x.Login, keyword));
+            var users = await _mapper.ProjectTo<BaseUser>(query).ToListAsync();
+            return Result.Success(users);
+        }
+        catch (Exception e)
+        {
+            return Result.Failure<List<BaseUser>>("An error occured.");
+        }
+       
+        
     }
 
     public async Task<Result<List<AllUserData>>> GetAll()

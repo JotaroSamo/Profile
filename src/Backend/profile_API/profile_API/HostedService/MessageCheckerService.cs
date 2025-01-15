@@ -1,5 +1,6 @@
 using MediatR;
 using profile_API.HostedService.Notification.Command;
+using profile_Application.Chat.GetUsersInChat;
 using profile_Application.Chat.Query.CheckMessage;
 using profile_MapperModel.Profile.Chat;
 
@@ -35,24 +36,36 @@ public class MessageCheckerService : BackgroundService
                 {
                     foreach (var message in result.Value)
                     {
-                        _logger.LogInformation("Processing message: {MessageId}", message.PublicId);
-
-                        var send = await mediator.Send(new SendNotificationCommand(message));
-                        if (send.IsFailure)
+                        var users = await mediator.Send(new GetUsersInChatQuery(message.ChatId));
+                        if (users.IsSuccess)
                         {
-                            _logger.LogWarning("Send Failed for message {MessageId}: {Error}", message.PublicId, send.Error);
+                            foreach (var user in users.Value)
+                            {
+                                _logger.LogInformation("Processing message: {MessageId}", message.PublicId);
+
+                                var send = await mediator.Send(new SendNotificationCommand(message, user.PublicId));
+                                if (send.IsFailure)
+                                {
+                                    _logger.LogWarning("Send Failed for message {MessageId}: {Error}", message.PublicId, send.Error);
+                                }
+                                else
+                                {
+                                    _logger.LogInformation("Message {MessageId} sent successfully", message.PublicId);
+                                }
+                            }
                         }
                         else
                         {
-                            _logger.LogInformation("Message {MessageId} sent successfully", message.PublicId);
+                            _logger.LogWarning("Failed to get users for chat {ChatId}: {Error}", message.ChatId, users.Error);
                         }
                     }
+
                 }
             }
 
             _logger.LogInformation("Service Sleep at {Time}", DateTime.UtcNow);
 
-            await Task.Delay(1000, stoppingToken);
+            await Task.Delay(10000, stoppingToken);
         }
     }
 }

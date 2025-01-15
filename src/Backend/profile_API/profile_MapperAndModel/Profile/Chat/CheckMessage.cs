@@ -6,6 +6,7 @@ public class CheckMessage
     
     public string Content { get; set; }
     
+    public Guid ChatId { get; set; }
     public Guid UserId { get; set; }
     
     public string Username { get; set; }

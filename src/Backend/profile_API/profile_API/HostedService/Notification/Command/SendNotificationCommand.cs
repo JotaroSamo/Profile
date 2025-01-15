@@ -7,10 +7,12 @@ namespace profile_API.HostedService.Notification.Command;
 public class SendNotificationCommand : ICommand<Result>
 {
     public CheckMessage Message { get; }
+    public Guid UserId { get; }
 
 
-    public SendNotificationCommand(CheckMessage message)
+    public SendNotificationCommand(CheckMessage message, Guid userId)
     {
         Message = message;
+        UserId = userId;
     }
 }
