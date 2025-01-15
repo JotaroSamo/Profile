@@ -46,4 +46,20 @@ public class MessageService : IMessageService
         }
        
     }
+
+    public async Task<Result<List<CheckMessage>>> CheckNewMessage(DateTime now)
+    {
+        try
+        {
+            var query = _profileDbContext.Messages.Where(x=>x.Timestamp >= now);
+            var result = await _mapper.ProjectTo<CheckMessage>(query).ToListAsync();
+            return Result.Success(result);
+        }
+        catch (Exception e)
+        {
+            return Result.Failure<List<CheckMessage>>("Failed to create messages");
+        }
+       
+        
+    }
 }

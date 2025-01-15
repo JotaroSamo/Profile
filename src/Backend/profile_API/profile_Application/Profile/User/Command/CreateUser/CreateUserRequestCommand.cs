@@ -8,32 +8,32 @@ namespace profile_Application.Profile.User.CreateUser;
 
 using Microsoft.Extensions.Logging;
 
-public class CreateUserRequestHandler : ICommandHandler<CreateUserRequest, Result<BaseUser>>
+public class CreateUserRequestCommand : ICommandHandler<CreateUserCommand, Result<BaseUser>>
 {
     private readonly IUserService _userService;
     private readonly IPasswordService _passwordService;
-    private readonly ILogger<CreateUserRequestHandler> _logger;
+    private readonly ILogger<CreateUserRequestCommand> _logger;
 
-    public CreateUserRequestHandler(IUserService userService, IPasswordService passwordService, ILogger<CreateUserRequestHandler> logger)
+    public CreateUserRequestCommand(IUserService userService, IPasswordService passwordService, ILogger<CreateUserRequestCommand> logger)
     {
         _userService = userService;
         _passwordService = passwordService;
         _logger = logger;
     }
 
-    public async Task<Result<BaseUser>> Handle(CreateUserRequest request, CancellationToken cancellationToken)
+    public async Task<Result<BaseUser>> Handle(CreateUserCommand command, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Handling CreateUserRequest for user {Login}", request.user.Login);
+        _logger.LogInformation("Handling CreateUserRequest for user {Login}", command.user.Login);
         
         // Генерация соли и хеширование пароля
         var salt = _passwordService.GenerateSalt();
-        var hasModel = _passwordService.HashPassword(request.user.Password, salt);
+        var hasModel = _passwordService.HashPassword(command.user.Password, salt);
         
         var user = profile_Domain.Profile.User.Create(
-            request.user.Login,
-            request.user.FirstName,
-            request.user.AvatarUrl,
-            request.user.LastName,
+            command.user.Login,
+            command.user.FirstName,
+            command.user.AvatarUrl,
+            command.user.LastName,
             hasModel.HashPassword,
             hasModel.Salt);
         
@@ -50,7 +50,7 @@ public class CreateUserRequestHandler : ICommandHandler<CreateUserRequest, Resul
             return Result.Failure<BaseUser>(baseUser.Error);
         }
 
-        _logger.LogInformation("Successfully created user {Login} with ID {UserId}", request.user.Login, baseUser.Value.PublicId);
+        _logger.LogInformation("Successfully created user {Login} with ID {UserId}", command.user.Login, baseUser.Value.PublicId);
         return Result.Success(baseUser.Value);
     }
 }

@@ -33,23 +33,23 @@ public class UserChatConnectionService : IUserChatConnectionService
         
     }
 
-    public async Task<Result<string>> DeleteConnection(Guid chatId, Guid userId)
+    public async Task<Result<bool>> DeleteConnection(string conectionId)
     {
-       var userChatConnectionEntity = await _profileDbContext.UserChatConnections.FirstOrDefaultAsync(x=>x.UserId == userId && x.ChatId == chatId);
-       if (userChatConnectionEntity == null)
-           return Result.Failure<string>("User not found");
-       var connectionId = userChatConnectionEntity.ConnectionId;
+       var userChatConnectionEntitys = await _profileDbContext.UserChatConnections.Where(c=>c.ConnectionId == conectionId).ToListAsync();
+       if (userChatConnectionEntitys == null)
+           return Result.Failure<bool>("UserChatConnection not found");
+       var connectionIds = userChatConnectionEntitys.Select(x=>x.ConnectionId).ToList();
        try
        {
-           _profileDbContext.Remove(userChatConnectionEntity);
+           _profileDbContext.RemoveRange(userChatConnectionEntitys);
            await _profileDbContext.SaveChangesAsync();
        }
        catch (Exception e)
        {
-           return Result.Failure<string>("User not found");
+           return Result.Failure<bool>("UserChatConnection not found");
        }
      
-       return Result.Success(connectionId);
+       return Result.Success(true);
     }
 
     public async Task<Result<List<BaseUserChatConnection>>> GetConnections(Guid chatId)

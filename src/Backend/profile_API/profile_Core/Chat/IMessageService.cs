@@ -7,4 +7,5 @@ namespace profile_Core.Chat;
 public interface IMessageService
 {
     public Task<Result<BaseMessage>> CreateMessage(Message message);
+    public Task<Result<List<CheckMessage>>> CheckNewMessage(DateTime now);
 }

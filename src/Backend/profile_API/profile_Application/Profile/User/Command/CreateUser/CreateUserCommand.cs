@@ -5,9 +5,9 @@ using profile_MapperModel.Profile.User;
 
 namespace profile_Application.Profile.User.CreateUser;
 
-public class CreateUserRequest : ICommand<Result<BaseUser>>
+public class CreateUserCommand : ICommand<Result<BaseUser>>
 {
-    public CreateUserRequest(profile_MapperModel.Profile.User.CreateUser createUser)
+    public CreateUserCommand(profile_MapperModel.Profile.User.CreateUser createUser)
     {
         user = createUser;
     }

@@ -48,7 +48,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
 
     // Настройка аутентификации
     services.Configure<Auth>(configuration.GetSection("Auth"));
-    services.AddMediatR(typeof(CreateUserRequest).Assembly);
+    services.AddMediatR(typeof(CreateUserCommand).Assembly);
     services.AddControllers()
         .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
     services.AddEndpointsApiExplorer();
@@ -61,6 +61,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     services.AddHttpContextAccessor();
     services.AddAuth(configuration, paramAuth.Get<Auth>());
     services.AddDependencyInjection();
+    
     services.AddSignalR();
 }
 

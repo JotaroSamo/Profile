@@ -8,7 +8,7 @@ namespace profile_Core.Chat;
 public interface IUserChatConnectionService
 {
     public Task<Result<BaseUserChatConnection>> CreateConnection(UserChatConnection userChatConnection);
-    public Task<Result<string>> DeleteConnection(Guid chatId, Guid userId);
+    public Task<Result<bool>> DeleteConnection(string conectionId);
     
     public Task<Result<List<BaseUserChatConnection>>> GetConnections(Guid chatId);
     

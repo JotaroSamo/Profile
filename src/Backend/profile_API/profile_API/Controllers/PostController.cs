@@ -46,7 +46,7 @@ public class PostController : ControllerBase
         {
             return BadRequest("Not authorized");
         }
-        var result = await _mediator.Send(new CreatePostRequest(post, publicID.Value));
+        var result = await _mediator.Send(new CreatePostCommand(post, publicID.Value));
         if (result.IsFailure)
         {
             return BadRequest(result.Error);

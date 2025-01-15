@@ -7,22 +7,22 @@ namespace profile_Application.Profile.Post.CreatePost;
 
 using Microsoft.Extensions.Logging;
 
-public class CreatePostRequestHandler : ICommandHandler<CreatePostRequest, Result<BasePost>>
+public class CreatePostCommandHandler : ICommandHandler<CreatePostCommand, Result<BasePost>>
 {
     private readonly IPostService _postService;
-    private readonly ILogger<CreatePostRequestHandler> _logger;
+    private readonly ILogger<CreatePostCommandHandler> _logger;
 
-    public CreatePostRequestHandler(IPostService postService, ILogger<CreatePostRequestHandler> logger)
+    public CreatePostCommandHandler(IPostService postService, ILogger<CreatePostCommandHandler> logger)
     {
         _postService = postService;
         _logger = logger;
     }
 
-    public async Task<Result<BasePost>> Handle(CreatePostRequest request, CancellationToken cancellationToken)
+    public async Task<Result<BasePost>> Handle(CreatePostCommand command, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Handling CreatePostRequest for user {UserId}", request.UserId);
+        _logger.LogInformation("Handling CreatePostRequest for user {UserId}", command.UserId);
         
-        var createPost = profile_Domain.Profile.Post.Create(request.Post.Title, request.Post.Content, request.Post.Tags);
+        var createPost = profile_Domain.Profile.Post.Create(command.Post.Title, command.Post.Content, command.Post.Tags);
         
         if (createPost.IsFailure)
         {
@@ -30,8 +30,8 @@ public class CreatePostRequestHandler : ICommandHandler<CreatePostRequest, Resul
             return Result.Failure<BasePost>(createPost.Error);
         }
 
-        _logger.LogInformation("Creating post for user {UserId}", request.UserId);
-        var post = await _postService.CreatePost(createPost.Value, request.UserId);
+        _logger.LogInformation("Creating post for user {UserId}", command.UserId);
+        var post = await _postService.CreatePost(createPost.Value, command.UserId);
         
         if (post.IsFailure)
         {

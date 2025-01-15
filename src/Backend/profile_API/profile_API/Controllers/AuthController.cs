@@ -20,7 +20,7 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Login([FromBody] LoginUser loginUser)
     {
 
-        var result = await _mediator.Send(new LoginUserRequest(loginUser));
+        var result = await _mediator.Send(new LoginUserCommand(loginUser));
         if (result.IsFailure)
         {
             return BadRequest(result.Error);

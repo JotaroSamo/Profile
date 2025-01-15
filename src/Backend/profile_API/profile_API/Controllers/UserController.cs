@@ -26,7 +26,7 @@ public class UserController : ControllerBase
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] CreateUser createUser)
     {
-        var result =  await _mediator.Send(new CreateUserRequest(createUser));
+        var result =  await _mediator.Send(new CreateUserCommand(createUser));
         if (result.IsFailure)
         {
             return BadRequest(result.Error);
