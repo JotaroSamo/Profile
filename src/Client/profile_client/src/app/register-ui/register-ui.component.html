@@ -1,0 +1,33 @@
+<!-- register.component.html -->
+<div class="container">
+    <h2>Регистрация</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="login">Логин</label>
+        <input id="login" formControlName="login" type="text" />
+      </div>
+      <div>
+        <label for="firstName">Имя</label>
+        <input id="firstName" formControlName="firstName" type="text" />
+      </div>
+      <div>
+        <label for="lastName">Фамилия</label>
+        <input id="lastName" formControlName="lastName" type="text" />
+      </div>
+      <div>
+        <label for="avatarUrl">URL аватара</label>
+        <input id="avatarUrl" formControlName="avatarUrl" type="text" />
+      </div>
+      <div>
+        <label for="password">Пароль</label>
+        <input id="password" formControlName="password" type="password" />
+      </div>
+      <div>
+        <label for="confirmPassword">Подтвердите пароль</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" />
+      </div>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+  </div>
+  
+  

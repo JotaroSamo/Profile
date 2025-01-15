@@ -1,0 +1,17 @@
+<!-- login.component.html -->
+<div class="container">
+    <h2>Вход</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="login">Логин</label>
+        <input id="login" formControlName="login" type="text" />
+      </div>
+      <div>
+        <label for="password">Пароль</label>
+        <input id="password" formControlName="password" type="password" />
+      </div>
+      <button type="submit">Войти</button>
+    </form>
+  </div>
+  
+  
