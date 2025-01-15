@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './login-ui.component.html',
+  styleUrls: ['./login-ui.component.scss']
 })
 export class LoginComponent {
   loginForm: FormGroup;

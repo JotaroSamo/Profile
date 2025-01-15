@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app/app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component'; // Создайте этот компонент аналогично LoginComponent
+import { LoginComponent } from './app/login-ui/login-ui.component';
+import { RegisterComponent } from './app/register-ui/register-ui.component'; // Создайте этот компонент аналогично LoginComponent
 
 @NgModule({
   declarations: [
