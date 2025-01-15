@@ -63,6 +63,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     services.AddDependencyInjection();
     
     services.AddSignalR();
+    services.AddCors(options => { options.AddPolicy("AllowAll", builder => { builder.AllowAnyOrigin() .AllowAnyMethod() .AllowAnyHeader(); }); });
 }
 
 // Метод для настройки промежуточного ПО
@@ -73,7 +74,7 @@ void ConfigureMiddleware(WebApplication app)
         app.UseSwagger();
         app.UseSwaggerUI();
     }
-
+    app.UseCors("AllowAll");
     app.UseMiddleware<ExceptionHandlingMiddleware>();
     app.UseHttpsRedirection();
     app.UseRouting();

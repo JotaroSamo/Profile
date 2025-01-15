@@ -34,6 +34,7 @@ public class User
     {
         PublicId = Guid.NewGuid();
         Login = login;
+        AvatarUrl = avatarUrl;
         FirstName = firstName;
         LastName = lastName;
         HasPassword = hasPassword;
