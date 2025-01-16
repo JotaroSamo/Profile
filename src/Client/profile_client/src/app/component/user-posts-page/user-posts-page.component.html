@@ -1,1 +1,39 @@
-<p>user-posts-page works!</p>
+
+<app-header-ui>
+    <nav class="links">
+   
+        <div class="nav-links">
+            <a class="link" routerLink="">Главная</a>
+            <a class="link" (click)="logout()" routerLinkActive="active">Выход</a>
+        </div>
+        <div class="profile-items" style="margin-left: 15px;">
+            <p class="profile-username">{{ userPosts?.login }}</p>
+        </div>
+    </nav>
+</app-header-ui>
+
+<div class="container">
+   
+    <app-sidebar>
+
+    </app-sidebar>
+    @for (post of userPosts?.posts; track $index)
+     {
+        <div class="post" style="flex: 1;">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+       
+            <div class="tags">
+                @for (tag of post.tags; track $index)
+                {
+                    <span class="tag">{{ tag }}</span>
+                }
+            </div>
+            <p class="created">{{ post.created}}</p>
+          </div>
+     }
+    
+  </div>
+
+<app-footer-ui></app-footer-ui>
+  

@@ -14,6 +14,14 @@ body {
     color: var(--light-color);
 }
 
+
+header {
+    
+    width: 100%; /* Ширина заголовка */
+}
+
+
+
 .btn {
     border: none;
     background: var(--primary-color);
@@ -47,6 +55,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     min-height: 100vh;
     margin: 10px;
     border: 1px solid var(--light-color);
@@ -124,6 +133,7 @@ body {
 }
 .profile-tag
 {
+    display: flex;
     border: 1px solid var(--light-color);
     border-radius: 5px;
     background: var(--dark-color);
@@ -137,3 +147,37 @@ body {
     background-color: var(--primary-color);
     color: var(--dark-color);
 }
+nav.links {
+    display: flex;
+    justify-content: right; /* Для упреждающей расстановки элементов */
+    align-items: center; /* Центрирование по вертикали */
+    background: var(--dark-color);
+    padding: 10px 20px; /* Добавим немного места вокруг элементов */
+}
+
+.profile-items {
+   
+    background: var(--dark-color);
+    color: var(--light-color);
+
+}
+
+
+
+a.link {
+    margin-left: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--light-color);
+    background: var(--dark-color);
+    color: var(--light-color);
+    text-decoration: none;
+    padding: 10px 15px; /* Увеличиваем плотность элементов */
+    font-weight: 700;
+    font-size: 14px;
+}
+
+a.link:hover {
+    background: var(--primary-color);
+    color: var(--dark-color);
+}
+

@@ -37,7 +37,7 @@ export class LoginUiComponent {
       this.authService.login(loginUser).subscribe(
         response => {
           // Перенаправление после успешного входа
-          this.router.navigate(['']);
+          this.router.navigate(['user/posts']);
         },
         error => {
           console.error('Login failed', error);
