@@ -1,10 +1,42 @@
-<p>create-post works!</p>
-<p>create-post works!</p>
-<p>create-post works!</p>
-<p>create-post works!</p>
-<p>create-post works!</p>
-<p>create-post works!</p>
-<p>create-post works!</p>
-<p>create-post works!</p>
-<p>create-post works!</p>
-<p>create-post works!</p>
+<app-header-ui>
+    <nav class="links">
+   
+        <div class="nav-links">
+            <a class="link" routerLink="" >Главная</a>
+        </div>
+    </nav>
+</app-header-ui>
+<div class="container">
+    <app-sidebar>
+
+    </app-sidebar>
+    <h2>Создать пост</h2>
+    <form [formGroup]="postForm" (ngSubmit)="createPost()">
+      <div>
+        <label>Заголовок:</label>
+        <input formControlName="title">
+      </div>
+      <div>
+        <label>Содержание:</label>
+        <textarea class="text-area-post" formControlName="content"></textarea>
+      </div>
+      <div>
+        <label>Теги:</label>
+        <input
+          [formControl]="newTagControl"  
+          placeholder="Добавьте тег"
+          (keydown.enter)="$event.preventDefault()"  
+        />
+        <button type="button" class="btn btn-tags" (click)="addTag(newTagControl.value)">Добавить тег</button>
+        <div *ngFor="let tag of tags; let i = index" style="margin-top: 10px;" class="subtitle">
+          <label>
+            {{ tag }} 
+            <button type="button" class="btn" (click)="removeTag(i)">Удалить</button>
+          </label>
+        </div>
+      </div>
+      <button class="btn" type="submit" [disabled]="postForm.invalid">Создать пост</button>
+    </form>
+  </div>
+  <app-footer-ui></app-footer-ui>
+  

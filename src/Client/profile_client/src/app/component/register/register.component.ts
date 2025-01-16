@@ -20,7 +20,7 @@ export class RegisterUiComponent {
 
   constructor(
     private fb: FormBuilder,
-    @Inject(forwardRef(() => UserService)) private userService: UserService,
+    private userService: UserService,
     private router: Router
   ) {
     this.registerForm = this.fb.group({

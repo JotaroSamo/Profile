@@ -12,9 +12,7 @@ export const routes: Routes = [
   { path: '', component: HelloPageComponent },
   { path: 'register', component: RegisterUiComponent },
   { path: 'login', component: LoginUiComponent },
-  { path: 'user/posts', component: UserPostsPageComponent, canActivate: [AuthGuard], children: 
-    [
-      {path : 'create', component: CreatePostComponent, canActivate: [AuthGuard]}
-    ]}
+  { path: 'user/posts', component: UserPostsPageComponent, canActivate: [AuthGuard]},
+  {path : 'user/posts/create', component: CreatePostComponent, canActivate: [AuthGuard]}
 
 ];

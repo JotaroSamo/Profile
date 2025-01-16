@@ -3,8 +3,8 @@ FROM node:22.12-alpine AS build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
-# Копируем package.json и yarn.lock
-COPY package.json yarn.lock ./
+
+
 # Устанавливаем Angular CLI
 RUN npm install -g @angular/cli@19.0.0
 # Устанавливаем зависимости
