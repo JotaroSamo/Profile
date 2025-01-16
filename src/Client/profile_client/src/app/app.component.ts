@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderUiComponent } from "./static/header-ui/header-ui.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderUiComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

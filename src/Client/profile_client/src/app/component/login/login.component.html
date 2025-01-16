@@ -1,16 +1,19 @@
-
+<app-header-ui>
+  <app-main-ui></app-main-ui>
+</app-header-ui>
 <div class="container">
     <h2>Вход</h2>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div>
+      <div class="subtitle">
         <label for="login">Логин</label>
         <input id="login" formControlName="login" type="text" />
       </div>
-      <div>
+        <div class="subtitle">
         <label for="password">Пароль</label>
         <input id="password" formControlName="password" type="password" />
       </div>
-      <button type="submit">Войти</button>
+      <button class="btn" type="submit">Войти</button>
     </form>
   </div>
+  <app-footer-ui></app-footer-ui>
   

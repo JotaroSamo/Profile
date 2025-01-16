@@ -1,1 +1,139 @@
+:root {
+    --dark-color: #000000;
+    --light-color: #FFFFFF;
+    --primary-color: #AE7AFF;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    font-family: "JetBrains Mono", sans-serif;
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+.btn {
+    border: none;
+    background: var(--primary-color);
+    color: var(--dark-color);
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    border: 1px solid var(--light-color);
+    border-radius: 15px;
+}
+
+.btn:hover {
+    border: 1px solid var(--primary-color);
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+.h6 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 800;
+}
+
+.subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--light-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 10px;
+    border: 1px solid var(--light-color);
+    border-radius: 15px;
+    padding: 20px;
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+.container h2 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.container form label {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.container form input {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    border: 1px solid var(--light-color);
+    border-radius: 5px;
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+.profile-news {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    border: 1px solid var(--light-color);
+    border-radius: 5px;
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+.profile-photo img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    padding: 10px 20px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 20px;
+
+}
+.profile-tags
+{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    margin-left: 20px;
+}
+.profile-tag
+{
+    border: 1px solid var(--light-color);
+    border-radius: 5px;
+    background: var(--dark-color);
+    color: var(--light-color);
+    padding: 20px 20px;
+    margin-left: 15px ;
+}
+.profile-tag :hover
+{
+    border: 1px solid var(--light-color);
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}

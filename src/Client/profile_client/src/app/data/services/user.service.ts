@@ -24,7 +24,5 @@ export class UserService {
     return this.http.post<BaseUser>(`${this.apiUrl}user/register`, user);
   }
 
-  login(user: LoginUser): Observable<JwtModel> {
-    return this.http.post<JwtModel>(`${this.apiUrl}auth/login`, user);
-  }
+ 
 }

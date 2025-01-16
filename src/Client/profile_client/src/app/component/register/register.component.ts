@@ -1,16 +1,19 @@
 import { Component, forwardRef, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { UserService } from '../../data/services/user-service.service';
+import { UserService } from '../../data/services/user.service';
 import { CreateUser } from '../../data/interface/user/CreateUser';
 import { Router } from '@angular/router';
+import { HeaderUiComponent } from "../../static/header/header.component";
+import { FooterUiComponent } from "../../static/footer/footer.component";
+import { MainUiComponent } from "../main/main.component";
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './register-ui.component.html',
-  styleUrls: ['./register-ui.component.scss']
+  imports: [CommonModule, ReactiveFormsModule, HeaderUiComponent, FooterUiComponent, MainUiComponent],
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterUiComponent {
   registerForm: FormGroup;

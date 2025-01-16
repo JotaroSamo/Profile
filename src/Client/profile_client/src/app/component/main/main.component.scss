@@ -1,0 +1,24 @@
+nav.links {
+    display: flex;
+    justify-content: right;
+    background: var(--dark-color);
+    padding: 10px;
+}
+
+a.link {
+    border-radius: 5px;
+    border: 1px solid var(--light-color);
+    border-radius: 5px;
+    background: var(--dark-color);
+    color: var(--light-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    margin-left: 5px;
+}
+a.link:hover {
+    background: var(--primary-color);
+    color: var(--dark-color);
+}
