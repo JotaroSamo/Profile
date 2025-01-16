@@ -10,5 +10,8 @@ import { MainUiComponent } from "../main/main.component";
   styleUrl: './hello-page.component.scss'
 })
 export class HelloPageComponent {
+    /**
+     *
+     */
 
 }

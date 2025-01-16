@@ -10,10 +10,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e1cf44d2-f6b7-4273-8e31-ec742b410db9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Profile_API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Profile_API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Client/profile_client/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/profile_client/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Client/profile_client/src/app/component/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/profile_client/src/app/component/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Client/profile_client/src/app/component/main/main.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/profile_client/src/app/component/main/main.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Client/profile_client/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/profile_client/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Client/profile_client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/profile_client/src/app/app.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +168,7 @@
       <workItem from="1736870383757" duration="6349000" />
       <workItem from="1736921302055" duration="13393000" />
       <workItem from="1736952693888" duration="647000" />
-      <workItem from="1737005268011" duration="4585000" />
+      <workItem from="1737005268011" duration="6728000" />
     </task>
     <task id="LOCAL-00001" summary="save">
       <option name="closed" value="true" />
@@ -315,24 +312,5 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="fix and front" />
     <option name="LAST_COMMIT_MESSAGE" value="fix and front" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/profile_API/Controllers/PostController.cs</url>
-          <line>28</line>
-          <properties documentPath="C:\Users\a.samoshuk\RiderProjects\profile\src\Backend\profile_API\profile_API\Controllers\PostController.cs" containingFunctionPresentation="Method 'GetPosts'">
-            <startOffsets>
-              <option value="816" />
-            </startOffsets>
-            <endOffsets>
-              <option value="872" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

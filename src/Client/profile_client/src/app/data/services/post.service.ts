@@ -14,11 +14,6 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getUserPost(): Observable<UserPosts> {
-    const token = localStorage.getItem('token'); // Получение токена из Local Storage
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${token}`, // Добавление заголовка Authorization
-    });
-
-    return this.http.get<UserPosts>(`${this.apiUrl}post/user-posts`, { headers });
+    return this.http.get<UserPosts>(`${this.apiUrl}post/user-posts`);
   }
 }
