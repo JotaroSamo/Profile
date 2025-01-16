@@ -4,14 +4,15 @@ import { UserPosts } from '../../data/interface/user/UserPosts';
 import { HeaderUiComponent } from "../../static/header/header.component";
 import { FooterUiComponent } from "../../static/footer/footer.component";
 import { AuthService } from '../../data/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { SidebarComponent } from "../sidebar/sidebar.component";
 
 @Component({
   selector: 'app-user-posts-page',
+
   templateUrl: './user-posts-page.component.html',
   styleUrls: ['./user-posts-page.component.scss'],
-  imports: [HeaderUiComponent, FooterUiComponent, SidebarComponent]
+  imports: [HeaderUiComponent, FooterUiComponent, SidebarComponent, RouterLink]
 })
 export class UserPostsPageComponent implements OnInit {
   userPosts: UserPosts | undefined;
