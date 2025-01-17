@@ -27,7 +27,7 @@
         <div *ngFor="let tag of tags; let i = index" style="margin-top: 10px;" class="subtitle">
           <label class="btn-tags">
             {{ tag }} 
-            <button mat-button type="button" (click)="removeTag(i)">X</button>
+            <button mat-flat-button type="button" (click)="removeTag(i)">X</button>
           </label>
         </div>
       </mat-form-field>
