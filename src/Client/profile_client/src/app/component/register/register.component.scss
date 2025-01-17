@@ -1,4 +1,45 @@
 
 
+.subtitle {
+    margin-bottom: 15px;
+}
 
+.subtitle label {
+    display: flex;
+    margin-bottom: 5px;
+    color: var(--light-color);
+}
+
+.subtitle input {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px; /* Расстояние между элементами формы */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-weight: bold;
+    color: #555;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 

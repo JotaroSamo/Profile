@@ -1,0 +1,21 @@
+<div class="sidebar">
+    <div class="sidebar_name">
+        <h1 class="h6">PROFILE</h1>
+    </div>
+    <div class="sidebar_links">
+        @if (IsAuth())
+        {
+            <a class="sidebar_links_link" routerLink="/user/posts">Мой посты</a>
+            <a class="sidebar_links_link" routerLink="/user/posts/create">Новый пост </a>
+            <a class="sidebar_links_link" (click)="logout()">Выход</a>
+        }
+        @else 
+        {
+            <a class="sidebar_links_link" routerLink="" >Главная</a>
+            <a class="sidebar_links_link" routerLink="/login">Вход</a>
+            <a class="sidebar_links_link" routerLink="/register">Регистрация</a>
+        }
+    </div>
+    
+</div>
+

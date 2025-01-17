@@ -21,4 +21,8 @@ export class PostService {
   createPost(post: CreatePost): Observable<BasePost> {
     return this.http.post<BasePost>(`${this.apiUrl}post/create`, post);
   }
+  deletePost(id: string) : Observable<boolean>
+  {
+    return this.http.delete<boolean>(`${this.apiUrl}post/delete/${id}`);
+  }
 }

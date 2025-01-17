@@ -24,20 +24,21 @@ header {
 
 .btn {
     border: none;
-    background: var(--primary-color);
-    color: var(--dark-color);
+    background: var(--dark-color);
+    color: var(--light-color);
     padding: 10px 20px;
     font-weight: 700;
     font-size: 14px;
     line-height: 24px;
     border: 1px solid var(--light-color);
-    border-radius: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .btn:hover {
     border: 1px solid var(--primary-color);
     background-color: var(--dark-color);
-    color: var(--light-color);
+    color: var(--primary-color);
 }
 
 .h6 {
@@ -55,8 +56,6 @@ header {
 .container {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    min-height: 100vh;
     margin: 10px;
     border: 1px solid var(--light-color);
     border-radius: 15px;
@@ -64,120 +63,14 @@ header {
     background: var(--dark-color);
     color: var(--light-color);
 }
-
-.container h2 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-.container form {
-    display: flex;
-    flex-direction: column;
-}
-
-.container form div {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-}
-
-.container form label {
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.container form input {
-    padding: 10px;
-    font-size: 14px;
-    line-height: 20px;
-    border: 1px solid var(--light-color);
-    border-radius: 5px;
-    background: var(--dark-color);
+p { 
     color: var(--light-color);
-}
-
-.profile-news {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    border: 1px solid var(--light-color);
-    border-radius: 5px;
-    background: var(--dark-color);
-    color: var(--light-color);
-}
-
-.profile-photo img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-    padding: 10px 20px;
-}
-
-.profile-info {
-    display: flex;
-    flex-direction: row;
-    padding: 20px 20px;
-
-}
-.profile-tags
-{
-    display: flex;
-    flex-direction: row;
-    padding: 10px 20px;
-    margin-left: 20px;
-}
-.profile-tag
-{
-    display: flex;
-    border: 1px solid var(--light-color);
-    border-radius: 5px;
-    background: var(--dark-color);
-    color: var(--light-color);
-    padding: 20px 20px;
-    margin-left: 15px ;
-}
-.profile-tag :hover
-{
-    border: 1px solid var(--light-color);
-    background-color: var(--primary-color);
-    color: var(--dark-color);
-}
-nav.links {
-    display: flex;
-    justify-content: right; /* Для упреждающей расстановки элементов */
-    align-items: center; /* Центрирование по вертикали */
-    background: var(--dark-color);
-    padding: 10px 20px; /* Добавим немного места вокруг элементов */
-}
-
-.profile-items {
-   
-    background: var(--dark-color);
-    color: var(--light-color);
-
-}
-
-
-
-a.link {
-    margin-left: 5px;
-    border-radius: 5px;
-    border: 1px solid var(--light-color);
-    background: var(--dark-color);
-    color: var(--light-color);
-    text-decoration: none;
-    padding: 10px 15px; /* Увеличиваем плотность элементов */
-    font-weight: 700;
-    font-size: 14px;
-}
-
-a.link:hover {
-    background: var(--primary-color);
-    color: var(--dark-color);
-}
+     margin-bottom: 30px;
+     } 
+img { 
+    width: 100%; 
+    height: auto;
+     border-radius: 15px; 
+     margin-top: 20px; 
+    }
 

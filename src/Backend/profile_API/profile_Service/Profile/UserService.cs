@@ -53,13 +53,25 @@ public class UserService : IUserService
 
     public async Task<Result<UserPosts>> GetUserAndPostsByPublicId(Guid publicId)
     {
-        var user =
-            await _mapper.ProjectTo<UserPosts>(_profileDbContext.Users.Include(x=>x.Posts).Where(x => x.PublicId == publicId)).FirstOrDefaultAsync();
+        var user = await _mapper.ProjectTo<UserPosts>(
+                _profileDbContext.Users
+                    .Include(x => x.Posts)
+                    .Where(x => x.PublicId == publicId)
+            )
+            .FirstOrDefaultAsync();
+
+       
         if (user == null)
         {
             return Result.Failure<UserPosts>("User not found");
         }
+        if (user != null)
+        {
+            // Сортируем посты пользователя по времени создания
+            user.Posts = user.Posts.OrderByDescending(post => post.Created).ToList();
+        }
         return Result.Success(_mapper.Map<UserPosts>(user));
+
     }
 
     public async Task<Result<UserChats>> GetUserChatsByPublicId(Guid publicId)

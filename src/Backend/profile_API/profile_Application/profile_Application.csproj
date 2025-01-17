@@ -16,7 +16,6 @@
       <Folder Include="Chat\Command\" />
       <Folder Include="Chat\Query\" />
       <Folder Include="Core\" />
-      <Folder Include="Profile\Post\Command\" />
       <Folder Include="Profile\Post\Query\" />
       <Folder Include="Profile\User\Command\" />
     </ItemGroup>

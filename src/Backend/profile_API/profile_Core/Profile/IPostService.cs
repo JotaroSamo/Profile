@@ -9,4 +9,5 @@ public interface IPostService
   public Task<Result<BasePost>> CreatePost(Post post, Guid userId);
   public Task<Post> GetPostsById(long postId);
   public Task<Post> UpdatePost(Post post);
+  public Task<Result<bool>> DeletePost(Guid postId, Guid userId);
 }

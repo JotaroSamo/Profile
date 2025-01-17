@@ -6,14 +6,12 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { LoginUser } from '../../data/interface/auth/LoginUser'; 
 import { Router } from '@angular/router';
 import { AuthService } from '../../data/services/auth.service';
-import { HeaderUiComponent } from "../../static/header/header.component";
-import { MainUiComponent } from "../main/main.component";
-import { FooterUiComponent } from "../../static/footer/footer.component";
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HeaderUiComponent, MainUiComponent, FooterUiComponent],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })

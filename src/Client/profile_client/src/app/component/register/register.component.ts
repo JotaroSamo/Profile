@@ -4,14 +4,11 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { UserService } from '../../data/services/user.service';
 import { CreateUser } from '../../data/interface/user/CreateUser';
 import { Router } from '@angular/router';
-import { HeaderUiComponent } from "../../static/header/header.component";
-import { FooterUiComponent } from "../../static/footer/footer.component";
-import { MainUiComponent } from "../main/main.component";
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HeaderUiComponent, FooterUiComponent, MainUiComponent],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })

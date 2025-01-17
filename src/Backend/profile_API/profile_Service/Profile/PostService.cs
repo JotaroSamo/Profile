@@ -53,4 +53,17 @@ public class PostService : IPostService
         await _profileDbContext.SaveChangesAsync();
         return _mapper.Map<Post>(postEntity);
     }
+
+    public async Task<Result<bool>> DeletePost(Guid postId, Guid userId)
+    {
+        var post = await _profileDbContext.Posts.FirstOrDefaultAsync(x=>x.PublicId == postId&&x.UserId == userId);
+        if (post == null)
+        {
+            return Result.Failure<bool>("Failed to delete post");
+        }
+        _profileDbContext.Remove(post);
+        await _profileDbContext.SaveChangesAsync();
+        return Result.Success(true);
+    }
+
 }

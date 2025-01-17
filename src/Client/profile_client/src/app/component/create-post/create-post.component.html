@@ -1,15 +1,5 @@
-<app-header-ui>
-    <nav class="links">
-   
-        <div class="nav-links">
-            <a class="link" routerLink="" >Главная</a>
-        </div>
-    </nav>
-</app-header-ui>
-<div class="container">
-    <app-sidebar>
 
-    </app-sidebar>
+<div class="container">
     <h2>Создать пост</h2>
     <form [formGroup]="postForm" (ngSubmit)="createPost()">
       <div>
@@ -38,5 +28,5 @@
       <button class="btn" type="submit" [disabled]="postForm.invalid">Создать пост</button>
     </form>
   </div>
-  <app-footer-ui></app-footer-ui>
+
   

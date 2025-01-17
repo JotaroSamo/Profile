@@ -3,12 +3,10 @@ import { CreatePost } from '../../data/interface/post/CreatePost';
 import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PostService } from '../../data/services/post.service';
-import { FooterUiComponent } from "../../static/footer/footer.component";
-import { HeaderUiComponent } from "../../static/header/header.component";
-import { SidebarComponent } from "../sidebar/sidebar.component";
+
 @Component({
   selector: 'app-create-post',
-  imports: [CommonModule, ReactiveFormsModule, FooterUiComponent, HeaderUiComponent, SidebarComponent],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './create-post.component.html',
   styleUrl: './create-post.component.scss'
 })

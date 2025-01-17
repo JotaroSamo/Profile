@@ -6,13 +6,19 @@ import { HelloPageComponent } from './component/hello-page/hello-page.component'
 import { UserPostsPageComponent } from './component/user-posts-page/user-posts-page.component';
 import { AuthGuard } from './shared/auth.guard';
 import { CreatePostComponent } from './component/create-post/create-post.component';
+import { LayoutComponent } from './static/layout/layout.component';
 
 
 export const routes: Routes = [
-  { path: '', component: HelloPageComponent },
-  { path: 'register', component: RegisterUiComponent },
-  { path: 'login', component: LoginUiComponent },
-  { path: 'user/posts', component: UserPostsPageComponent, canActivate: [AuthGuard]},
-  {path : 'user/posts/create', component: CreatePostComponent, canActivate: [AuthGuard]}
+  { path: '', component: LayoutComponent, children : 
+    [
+      {path: '', component: HelloPageComponent},
+      {path: 'user/posts', component: UserPostsPageComponent, canActivate: [AuthGuard]},
+      {path : 'user/posts/create', component: CreatePostComponent, canActivate: [AuthGuard]},
+      { path: 'register', component: RegisterUiComponent },
+      { path: 'login', component: LoginUiComponent },
+  
+    ] },
+  
 
 ];

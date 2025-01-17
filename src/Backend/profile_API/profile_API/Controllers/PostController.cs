@@ -2,6 +2,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using profile_Application.Profile.Post;
+using profile_Application.Profile.Post.Command.DeletePost;
 using profile_Application.Profile.Post.CreatePost;
 using profile_Application.Profile.Post.GetUserPost;
 using profile_Core.Contracts;
@@ -53,5 +54,21 @@ public class PostController : ControllerBase
         }
         return Ok(result.Value);
     }
-    
+
+    [HttpDelete("delete/{postId}")]
+    public async Task<IActionResult> Delete(Guid postId)
+    {
+        var publicID = _httpContextService.GetCurrentUserGuid();
+        if (publicID == null)
+        {
+            return BadRequest("Not authorized");
+        }
+        var result = await _mediator.Send(new DeletePostCommand(postId, publicID.Value));
+        if (result.IsFailure)
+        {
+            return BadRequest(result.Error);
+        }
+        return Ok(result.Value);
+    }
+
 }
