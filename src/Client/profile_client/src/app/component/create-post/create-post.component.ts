@@ -1,12 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { CreatePost } from '../../data/interface/post/CreatePost';
-import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PostService } from '../../data/services/post.service';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { ErrorStateMatcher } from '@angular/material/core';
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 @Component({
   selector: 'app-create-post',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MatInputModule, MatButtonModule, MatCardModule],
   templateUrl: './create-post.component.html',
   styleUrl: './create-post.component.scss'
 })
@@ -14,7 +23,7 @@ export class CreatePostComponent implements OnInit {
   postForm: FormGroup;
   newTagControl: FormControl; // Объявляем новый контроль для тегов
   tags: string[] = []; // Массив строк для тегов
-
+  matcher = new MyErrorStateMatcher();
   constructor(private fb: FormBuilder, private postService: PostService) {
     this.postForm = this.fb.group({
       title: ['', Validators.required],

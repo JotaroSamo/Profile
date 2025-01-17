@@ -1,32 +1,36 @@
-
 <div class="container">
+  <mat-card>
     <h2>Создать пост</h2>
-    <form [formGroup]="postForm" (ngSubmit)="createPost()">
-      <div>
-        <label>Заголовок:</label>
-        <input formControlName="title">
-      </div>
-      <div>
-        <label>Содержание:</label>
-        <textarea class="text-area-post" formControlName="content"></textarea>
-      </div>
-      <div>
-        <label>Теги:</label>
-        <input
-          [formControl]="newTagControl"  
-          placeholder="Добавьте тег"
-          (keydown.enter)="$event.preventDefault()"  
-        />
-        <button type="button" class="btn btn-tags" (click)="addTag(newTagControl.value)">Добавить тег</button>
+    <form class="form_createPost " [formGroup]="postForm" (ngSubmit)="createPost()">
+      <mat-form-field>
+        <mat-label>Заголовок</mat-label>
+        <input matInput formControlName="title" [errorStateMatcher]="matcher" />
+        <mat-error *ngIf="postForm.get('title')?.hasError('required')">
+          Заголовок обязателен
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Содержание</mat-label>
+        <textarea matInput class="text-area-post" formControlName="content"></textarea>
+        <mat-error *ngIf="postForm.get('content')?.hasError('required')">
+          Содержание обязательно
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Теги</mat-label>
+        <input matInput [formControl]="newTagControl" placeholder="Добавьте тег" (keydown.enter)="$event.preventDefault()" />
+        <mat-error *ngIf="newTagControl.hasError('required')">
+          Тег обязателен
+        </mat-error>
+        <button class="btn" type="button" class="btn btn-tags" (click)="addTag(newTagControl.value)">Добавить тег</button>
         <div *ngFor="let tag of tags; let i = index" style="margin-top: 10px;" class="subtitle">
-          <label>
+          <label class="btn-tags">
             {{ tag }} 
-            <button type="button" class="btn" (click)="removeTag(i)">Удалить</button>
+            <button class="btn" type="button" (click)="removeTag(i)">Удалить</button>
           </label>
         </div>
-      </div>
+      </mat-form-field>
       <button class="btn" type="submit" [disabled]="postForm.invalid">Создать пост</button>
     </form>
-  </div>
-
-  
+  </mat-card>
+</div>

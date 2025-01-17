@@ -1,17 +1,23 @@
 
 <div class="container">
+  <mat-card>
     <h2 class="h6">Вход</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div class="subtitle">
-        <label for="login">Логин</label>
-        <input id="login" formControlName="login" type="text" />
-      </div>
-        <div class="subtitle">
-        <label for="password">Пароль</label>
-        <input id="password" formControlName="password" type="password" />
-      </div>
-      <button class="btn" type="submit">Войти</button>
+    <form class="form_login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Логин</mat-label>
+        <input matInput id="login" formControlName="login" [errorStateMatcher]="matcher" type="text" />
+        <mat-error *ngIf="loginForm.get('login')?.hasError('required')">
+          Логин обязателен
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Пароль</mat-label>
+        <input matInput id="password" formControlName="password" [errorStateMatcher]="matcher" type="password" />
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          Пароль обязателен
+        </mat-error>
+      </mat-form-field>
+      <button style="margin-top: 15px;" class="btn" type="submit" [disabled]="!loginForm.valid">Войти</button>
     </form>
-  </div>
-
-  
+  </mat-card>
+</div>

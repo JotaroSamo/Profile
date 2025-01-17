@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     height: 100%;
     margin: 0;
-    font-family: "JetBrains Mono", sans-serif;
+ 
     background: var(--dark-color);
     color: var(--light-color);
 }
@@ -74,3 +74,6 @@ img {
      margin-top: 20px; 
     }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

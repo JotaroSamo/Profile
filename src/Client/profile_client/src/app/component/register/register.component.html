@@ -1,33 +1,61 @@
-
 <div class="container">
+  <mat-card>
     <h2 class="h6">Регистрация</h2>
-    <form [formGroup]="registerForm" (click)="onSubmit()">
-      <div class="subtitle">
-        <label for="login">Логин</label>
-        <input id="login" formControlName="login" type="text" />
-      </div>
-      <div class="subtitle">
-        <label for="firstName">Имя</label>
-        <input id="firstName" formControlName="firstName" type="text" />
-      </div>
-      <div class="subtitle">
-        <label for="lastName">Фамилия</label>
-        <input id="lastName" formControlName="lastName" type="text" />
-      </div>
-      <div class="subtitle">
-        <label for="avatarUrl">URL аватара</label>
-        <input id="avatarUrl" formControlName="avatarUrl" type="text" />
-      </div>
-      <div class="subtitle">
-        <label for="password">Пароль</label>
-        <input id="password" formControlName="password" type="password" />
-      </div>
-      <div class="subtitle">
-        <label for="confirmPassword">Подтвердите пароль</label>
-        <input id="confirmPassword" formControlName="confirmPassword" type="password" />
-      </div>
-      <button class="btn" type="submit">Зарегистрироваться</button>
+    <form class="form_reg" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Логин</mat-label>
+        <input matInput id="login" formControlName="login" [errorStateMatcher]="matcher" type="text" />
+        <mat-error *ngIf="registerForm.get('login')?.hasError('required')">
+          Логин обязателен
+        </mat-error>
+        <mat-error *ngIf="registerForm.get('login')?.hasError('minlength')">
+          Логин должен быть не менее 3 символов
+        </mat-error>
+        <mat-error *ngIf="registerForm.get('login')?.hasError('maxlength')">
+          Логин должен быть не более 16 символов
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Имя</mat-label>
+        <input matInput id="firstName" formControlName="firstName" type="text" />
+        <mat-error *ngIf="registerForm.get('firstName')?.hasError('required')">
+          Имя обязательно
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Фамилия</mat-label>
+        <input matInput id="lastName" formControlName="lastName" type="text" />
+        <mat-error *ngIf="registerForm.get('lastName')?.hasError('required')">
+          Фамилия обязательна
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>URL аватара</mat-label>
+        <input matInput id="avatarUrl" formControlName="avatarUrl" type="text" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Пароль</mat-label>
+        <input matInput id="password" formControlName="password" type="password" />
+        <mat-error *ngIf="registerForm.get('password')?.hasError('required')">
+          Пароль обязателен
+        </mat-error>
+        <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">
+          Пароль должен быть не менее 6 символов
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Подтвердите пароль</mat-label>
+        <input matInput id="confirmPassword" formControlName="confirmPassword" type="password" />
+        <mat-error *ngIf="registerForm.get('confirmPassword')?.hasError('required')">
+          Подтверждение пароля обязательно
+        </mat-error>
+        <mat-error *ngIf="registerForm.hasError('mismatch')">
+          Пароли не совпадают
+        </mat-error>
+      </mat-form-field>
+      <button style="margin-top: 20px;" class="btn" type="submit" [disabled]="!registerForm.valid">Зарегистрироваться</button>
     </form>
-  </div>
+  </mat-card>
+</div>
 
   
