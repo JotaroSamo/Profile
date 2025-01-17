@@ -16,17 +16,18 @@
           Содержание обязательно
         </mat-error>
       </mat-form-field>
+      <button class="btn" type="button" class="btn btn-tags" (click)="addTag(newTagControl.value)">Добавить тег</button>
       <mat-form-field>
         <mat-label>Теги</mat-label>
         <input matInput [formControl]="newTagControl" placeholder="Добавьте тег" (keydown.enter)="$event.preventDefault()" />
         <mat-error *ngIf="newTagControl.hasError('required')">
           Тег обязателен
         </mat-error>
-        <button class="btn" type="button" class="btn btn-tags" (click)="addTag(newTagControl.value)">Добавить тег</button>
+        
         <div *ngFor="let tag of tags; let i = index" style="margin-top: 10px;" class="subtitle">
           <label class="btn-tags">
             {{ tag }} 
-            <button class="btn" type="button" (click)="removeTag(i)">Удалить</button>
+            <button mat-button type="button" (click)="removeTag(i)">X</button>
           </label>
         </div>
       </mat-form-field>
