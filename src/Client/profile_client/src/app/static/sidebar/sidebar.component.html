@@ -2,6 +2,8 @@
     <div class="sidebar_name">
         <h1 class="h6">PROFILE</h1>
     </div>
+
+    
     <div class="sidebar_links">
         @if (IsAuth())
         {
@@ -15,7 +17,10 @@
             <a class="sidebar_links_link" routerLink="/login">Вход</a>
             <a class="sidebar_links_link" routerLink="/register">Регистрация</a>
         }
+           
     </div>
-    
+    <div class="search-panel">
+        <app-search-bar></app-search-bar>
+    </div>
 </div>
 

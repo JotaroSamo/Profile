@@ -38,10 +38,10 @@ public class UserController : ControllerBase
         return Ok(result.Value);
     }
     [AllowAnonymous]
-    [HttpGet("find-users")]
-    public async Task<IActionResult> FindUsers([FromQuery] string login)
+    [HttpGet("find-users/{query}")]
+    public async Task<IActionResult> FindUsers(string query)
     {
-        var result =  await _mediator.Send(new FindUsersQuery(login));
+        var result =  await _mediator.Send(new FindUsersQuery(query));
         if (result.IsFailure)
         {
             return BadRequest(result.Error);

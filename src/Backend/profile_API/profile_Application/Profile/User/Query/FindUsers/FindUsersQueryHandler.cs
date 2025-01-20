@@ -18,7 +18,7 @@ public class FindUsersQueryHandler : IQueryHandler<FindUsersQuery, Result<List<B
     }
     public async Task<Result<List<BaseUser>>> Handle(FindUsersQuery request, CancellationToken cancellationToken)
     {
-        var users = await _userService.FindUsersByLogin(request.Login);
+        var users = await _userService.FindUsersByQuery(request.Query);
         if (users.IsFailure)
         {
             return Result.Failure<List<BaseUser>>(users.Error);

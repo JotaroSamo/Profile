@@ -1,13 +1,19 @@
 <div class="container">
-    <div *ngFor="let post of userPosts?.posts;" class="post" style="flex: 1;">
-        <h3>{{ post.title }}</h3>
+    <mat-card *ngFor="let post of userPosts?.posts;" class="post">
+      <mat-card-header>
+        <mat-card-title>{{ post.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
         <p>{{ post.content }}</p>
         <div class="tags">
-            <span *ngFor="let tag of post.tags" class="tag">{{ tag }}</span>
+            <div class="tag" *ngFor="let tag of post.tags">{{ tag }}</div>
         </div>
         <p class="created">{{ post.created | date: 'medium' }}</p>
+      </mat-card-content>
+      <mat-card-actions>
         <button class="btn" (click)="deletePost(post.publicId)">Удалить</button>
-    </div>
-</div>
-
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
   

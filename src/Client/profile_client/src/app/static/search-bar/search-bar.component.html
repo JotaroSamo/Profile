@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+
+    <input matInput placeholder="Search" (input)="onSearchChange($event)">
+  </mat-toolbar>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  <div *ngFor="let user of users" class="user-item">
+    <img *ngIf="user.avatarUrl" [src]="user.avatarUrl" alt="{{user.firstName}}'s avatar">
+    <div class="user-details">
+      <h3>{{user.firstName}} {{user.lastName}}</h3>
+      <p>{{user.login}}</p>
+      <button mat-button>View Profile</button>
+    </div>
+  </div>
+  

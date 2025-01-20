@@ -9,10 +9,12 @@ body {
     flex-direction: column;
     height: 100%;
     margin: 0;
- 
-    background: var(--dark-color);
+    background-image: url("/Img/main.png");
+    background-size: cover; /* Изображение будет растянуто по всей ширине */
+    background-attachment: fixed; /* Изображение останется фиксированным */
     color: var(--light-color);
 }
+
 
 
 header {
@@ -60,7 +62,7 @@ header {
     border: 1px solid var(--light-color);
     border-radius: 15px;
     padding: 20px;
-    background: var(--dark-color);
+    background: transparent;
     color: var(--light-color);
 }
 p { 
@@ -77,3 +79,4 @@ img {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

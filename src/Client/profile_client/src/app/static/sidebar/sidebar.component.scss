@@ -32,3 +32,10 @@
     color: var(--primary-color);
     border-color: var(--primary-color);
 }
+.search-panel
+{
+    margin: 10px 0;
+    display: block;
+    border: 1px solid var(--light-color);
+    border-radius: 10px;
+}

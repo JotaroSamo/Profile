@@ -86,13 +86,14 @@ public class UserService : IUserService
         return Result.Success(user);
     }
 
-    public async Task<Result<List<BaseUser>>> FindUsersByLogin(string login)
+    public async Task<Result<List<BaseUser>>> FindUsersByQuery(string query)
     {
         try
         {
-            var keyword = $"%{login}%";
-            var query = _profileDbContext.Users.Where(x => EF.Functions.ILike(x.Login, keyword));
-            var users = await _mapper.ProjectTo<BaseUser>(query).ToListAsync();
+            var keyword = $"%{query}%";
+            var Iquery = _profileDbContext.Users.Where(x => EF.Functions.ILike(x.Login, keyword)
+                                                            ||EF.Functions.ILike(x.FirstName, keyword)|| EF.Functions.ILike(x.LastName, keyword)).Take(7);
+            var users = await _mapper.ProjectTo<BaseUser>(Iquery).ToListAsync();
             return Result.Success(users);
         }
         catch (Exception e)

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../data/services/auth.service';
 import { Router, RouterLink } from '@angular/router';
+import { SearchBarComponent } from "../search-bar/search-bar.component";
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterLink],
+  imports: [RouterLink, SearchBarComponent],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })

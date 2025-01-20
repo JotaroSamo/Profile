@@ -6,21 +6,28 @@ import { provideHttpClient, HTTP_INTERCEPTORS, withInterceptorsFromDi } from '@a
 import { AuthInterceptor } from './shared/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimations } from '@angular/platform-browser/animations';
-
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import { MAT_CHIPS_DEFAULT_OPTIONS } from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
 
 const ErrorState = {
   provide: ErrorStateMatcher,
-  usecClass: ShowOnDirtyErrorStateMatcher
+  useClass: ShowOnDirtyErrorStateMatcher
 };
 
+const chips = {
+  provide: MAT_CHIPS_DEFAULT_OPTIONS,
+  useValue: {
+    separatorKeyCodes: [ENTER, COMMA]
+  }
+};
 
 const AUTH_INTERCEPTOR = {
   provide: HTTP_INTERCEPTORS,
   useClass: AuthInterceptor,
   multi: true
 };
-
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -29,10 +36,9 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(ReactiveFormsModule),
     AUTH_INTERCEPTOR,
     provideHttpClient(withInterceptorsFromDi()), ErrorState, BrowserAnimationsModule,
-    provideAnimations()
+    provideAnimations(), chips, MatChipsModule
   ]
 };
-
 
 
 

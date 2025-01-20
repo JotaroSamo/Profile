@@ -14,6 +14,6 @@ public interface IUserService
     
     public Task<Result<UserChats>> GetUserChatsByPublicId(Guid publicId);
     
-      public  Task<Result<List<BaseUser>>> FindUsersByLogin(string login);
+      public  Task<Result<List<BaseUser>>> FindUsersByQuery(string query);
     public Task<Result<List<AllUserData>>> GetAll();
 }

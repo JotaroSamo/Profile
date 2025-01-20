@@ -6,10 +6,10 @@ namespace profile_Application.Profile.User.Query.FindUsers;
 
 public class FindUsersQuery : IQuery<Result<List<BaseUser>>>
 {
-    public string Login { get; }
+    public string Query { get; }
 
-    public FindUsersQuery(string login)
+    public FindUsersQuery(string query)
     {
-        Login = login;
+        Query = query;
     }
 }
