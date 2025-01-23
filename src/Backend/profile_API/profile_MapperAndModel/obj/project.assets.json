@@ -173,40 +173,33 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\a.samoshuk\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\a.samoshuk\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\a.samoshuk\\RiderProjects\\profile\\src\\Backend\\profile_API\\profile_MapperAndModel\\profile_MapperAndModel.csproj",
+      "projectUniqueName": "C:\\Users\\a.samoshuk\\RiderProjects\\Profile\\src\\Backend\\profile_API\\profile_MapperAndModel\\profile_MapperAndModel.csproj",
       "projectName": "profile_MapperAndModel",
-      "projectPath": "C:\\Users\\a.samoshuk\\RiderProjects\\profile\\src\\Backend\\profile_API\\profile_MapperAndModel\\profile_MapperAndModel.csproj",
+      "projectPath": "C:\\Users\\a.samoshuk\\RiderProjects\\Profile\\src\\Backend\\profile_API\\profile_MapperAndModel\\profile_MapperAndModel.csproj",
       "packagesPath": "C:\\Users\\a.samoshuk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\a.samoshuk\\RiderProjects\\profile\\src\\Backend\\profile_API\\profile_MapperAndModel\\obj\\",
+      "outputPath": "C:\\Users\\a.samoshuk\\RiderProjects\\Profile\\src\\Backend\\profile_API\\profile_MapperAndModel\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\a.samoshuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\a.samoshuk\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\a.samoshuk\\RiderProjects\\profile\\src\\Backend\\profile_API\\profile_Domain\\profile_Domain.csproj": {
-              "projectPath": "C:\\Users\\a.samoshuk\\RiderProjects\\profile\\src\\Backend\\profile_API\\profile_Domain\\profile_Domain.csproj"
+            "C:\\Users\\a.samoshuk\\RiderProjects\\Profile\\src\\Backend\\profile_API\\profile_Domain\\profile_Domain.csproj": {
+              "projectPath": "C:\\Users\\a.samoshuk\\RiderProjects\\Profile\\src\\Backend\\profile_API\\profile_Domain\\profile_Domain.csproj"
             }
           }
         }
@@ -219,7 +212,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -247,7 +240,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

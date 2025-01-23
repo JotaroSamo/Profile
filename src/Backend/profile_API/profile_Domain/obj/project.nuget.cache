@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ihn9YaccNQE=",
+  "dgSpecHash": "L5N9sk7Rymc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\a.samoshuk\\RiderProjects\\profile\\src\\Backend\\profile_API\\profile_Domain\\profile_Domain.csproj",
+  "projectFilePath": "C:\\Users\\a.samoshuk\\RiderProjects\\Profile\\src\\Backend\\profile_API\\profile_Domain\\profile_Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\csharpfunctionalextensions\\3.4.3\\csharpfunctionalextensions.3.4.3.nupkg.sha512"
   ],

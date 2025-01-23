@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qgTwV/L46vQ=",
+  "dgSpecHash": "MY8Bw80dnr0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\a.samoshuk\\RiderProjects\\profile\\src\\Backend\\profile_API\\profile_Service\\profile_Service.csproj",
+  "projectFilePath": "C:\\Users\\a.samoshuk\\RiderProjects\\Profile\\src\\Backend\\profile_API\\profile_Service\\profile_Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\a.samoshuk\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
