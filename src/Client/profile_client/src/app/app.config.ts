@@ -10,7 +10,8 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import { MAT_CHIPS_DEFAULT_OPTIONS } from '@angular/material/chips';
 import { MatChipsModule } from '@angular/material/chips';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NgModule } from '@angular/core';
 const ErrorState = {
   provide: ErrorStateMatcher,
   useClass: ShowOnDirtyErrorStateMatcher
@@ -36,7 +37,7 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(ReactiveFormsModule),
     AUTH_INTERCEPTOR,
     provideHttpClient(withInterceptorsFromDi()), ErrorState, BrowserAnimationsModule,
-    provideAnimations(), chips, MatChipsModule
+    provideAnimations(), chips, MatChipsModule, provideAnimationsAsync(), NgModule
   ]
 };
 
