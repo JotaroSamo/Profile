@@ -1,35 +1,48 @@
 using System.Net;
-using Newtonsoft.Json;
+using System.Text.Json;
+using profile_Domain.Exception;
+using profile_Domain.Exception.Base;
+using profile_Domain.Exception.Model;
 
-namespace profile_API.Middleware;
-
-public class ExceptionHandlingMiddleware
+namespace profile_API.Middleware
 {
-    private readonly RequestDelegate _next;
-
-    public ExceptionHandlingMiddleware(RequestDelegate next)
+    public class ExceptionHandlingMiddleware
     {
-        _next = next;
-    }
+        private readonly RequestDelegate _next;
 
-    public async Task InvokeAsync(HttpContext context)
-    {
-        try
+        public ExceptionHandlingMiddleware(RequestDelegate next)
         {
-            await _next(context);
+            _next = next;
         }
-        catch (Exception ex)
+
+        public async Task InvokeAsync(HttpContext context)
         {
-            await HandleExceptionAsync(context, ex);
+            try
+            {
+                await _next(context);
+            }
+            catch (ProfileExceptionBase ex)
+            {
+                await HandleExceptionAsync(context, ex);
+            }
+            catch (Exception ex)
+            {
+                await HandleExceptionAsync(context, new ProfileException(500, ex.Message));
+            }
         }
-    }
 
-    private Task HandleExceptionAsync(HttpContext context, Exception ex)
-    {
-        context.Response.ContentType = "application/json";
-        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+        private static Task HandleExceptionAsync(HttpContext context, ProfileExceptionBase exception)
+        {
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = exception.StatusCode;
 
-        var result = JsonConvert.SerializeObject(new { error = ex.Message });
-        return context.Response.WriteAsync(result);
+            var result = JsonSerializer.Serialize(new ErrorModel()
+            {
+                StatusCode = exception.StatusCode,
+                ErrorMessage = exception.ErrorMessage
+            });
+            return context.Response.WriteAsync(result);
+        }
     }
 }
+

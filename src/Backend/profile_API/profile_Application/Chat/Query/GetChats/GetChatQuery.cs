@@ -4,7 +4,7 @@ using profile_MapperModel.Profile.User;
 
 namespace profile_Application.Chat.GetChats;
 
-public class GetChatQuery : IQuery<Result<UserChats>>
+public class GetChatQuery : IQuery<UserChats>
 {
     public Guid UserId { get; }
 

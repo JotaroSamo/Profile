@@ -1,13 +1,15 @@
 using CSharpFunctionalExtensions;
+using profile_Application.Chat.Command.DeleteConnection;
 using profile_Application.Core.Commands.Contracts;
 using profile_Core.Chat;
 using profile_Core.Contracts;
+using profile_Domain.Exception;
 
 namespace profile_Application.Chat.DeleteConnection;
 
 using Microsoft.Extensions.Logging;
 
-public class DeleteConnectionCommandHandler : ICommandHandler<DeleteConnectionCommand,Result<bool>>
+public class DeleteConnectionCommandHandler : ICommandHandler<DeleteConnectionCommand,bool>
 {
     private readonly IUserChatConnectionService _userChatConnectionService;
     private readonly IHttpContextService _httpContextService;
@@ -20,7 +22,7 @@ public class DeleteConnectionCommandHandler : ICommandHandler<DeleteConnectionCo
         _logger = logger;
     }
 
-    public async Task<Result<bool>> Handle(DeleteConnectionCommand request, CancellationToken cancellationToken)
+    public async Task<bool> Handle(DeleteConnectionCommand request, CancellationToken cancellationToken)
     {
 
         _logger.LogInformation("Handling DeleteConnectionCommand {requestConnectionId}", request.ConnectionId);
@@ -30,10 +32,10 @@ public class DeleteConnectionCommandHandler : ICommandHandler<DeleteConnectionCo
         if (success.IsFailure)
         {
             _logger.LogWarning("Failed to delete connection {requestConnectionId}", request.ConnectionId);
-            return Result.Failure<bool>("Failed to delete connection");
+            throw new ProfileException(500,"Failed to delete connection");
         }
 
         _logger.LogInformation("Successfully deleted connection {requestConnectionId}", request.ConnectionId);
-        return success;
+        return success.Value;
     }
 }

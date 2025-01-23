@@ -21,11 +21,7 @@ public class AuthController : ControllerBase
     {
 
         var result = await _mediator.Send(new LoginUserCommand(loginUser));
-        if (result.IsFailure)
-        {
-            return BadRequest(result.Error);
-        }
-        return Ok(result.Value);
+        return Ok(result);
     }
 
 }

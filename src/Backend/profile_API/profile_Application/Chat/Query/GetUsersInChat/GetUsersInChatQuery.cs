@@ -2,9 +2,9 @@ using CSharpFunctionalExtensions;
 using profile_Application.Core.Queries.Contracts;
 using profile_MapperModel.Profile.User;
 
-namespace profile_Application.Chat.GetUsersInChat;
+namespace profile_Application.Chat.Query.GetUsersInChat;
 
-public class GetUsersInChatQuery :IQuery<Result<List<BaseUser>>>
+public class GetUsersInChatQuery :IQuery<List<BaseUser>>
 {
     public Guid ChatId { get; }
 

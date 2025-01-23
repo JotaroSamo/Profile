@@ -1,15 +1,18 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
+using profile_Application.Chat.Command.CreateMessage;
+using profile_Application.Chat.Command.DeleteConnection;
 using profile_Application.Chat.CreateConnection;
-using profile_Application.Chat.CreateMessage;
 using profile_Application.Chat.DeleteConnection;
 using profile_Application.Chat.GetChats;
 using profile_Application.Chat.GetMessages;
-using profile_Application.Chat.GetUsersInChat;
+using profile_Application.Chat.Query.GetUsersInChat;
 using profile_Application.Profile.User.GetUserId;
+using profile_Application.Profile.User.Query.GetUserId;
 using profile_Core.Chat;
 using profile_Core.Contracts;
+using profile_Domain.Exception;
 using profile_Domain.Notification;
 using profile_MapperModel.Profile.Chat;
 
@@ -29,27 +32,12 @@ public class ChatHub: Microsoft.AspNetCore.SignalR.Hub
     public async override Task OnConnectedAsync()
     {
         var userId = await _mediator.Send(new GetUserIdQuery());
-        if (userId.IsFailure)
-        {
-            throw new HubException(userId.Error);
-        }
-        var chats = await _mediator.Send(new GetChatQuery(userId.Value));
-        if (chats.IsFailure)
-        {
-            throw new HubException(chats.Error);
-        }
-       
-        foreach (var chat in chats.Value.Chats)
+        var chats = await _mediator.Send(new GetChatQuery(userId));
+        foreach (var chat in chats.Chats)
         {
             // Создание команды для создания соединения
             var command = new CreateConnectionCommand(chat.PublicId, Context.ConnectionId);
             var result = await _mediator.Send(command);
-
-            // Проверка на наличие ошибок при создании соединения
-            if (result.IsFailure)
-            {
-                throw new HubException(result.Error);
-            }
             await Groups.AddToGroupAsync(Context.ConnectionId, chat.PublicId.ToString());
         }
     }
@@ -58,27 +46,14 @@ public class ChatHub: Microsoft.AspNetCore.SignalR.Hub
     {
      
         var userId = await _mediator.Send(new GetUserIdQuery());
-        if (userId.IsFailure)
-        {
-            throw new HubException(userId.Error);
-        }
         
         var result = await _mediator.Send(new DeleteConnectionCommand(Context.ConnectionId));
-        if (result.IsFailure)
+        if (!result)
         {
-            throw new HubException(result.Error);
+          throw new ProfileException(500,$"Unknown error {Context.ConnectionId}");
         }
-
-        if (!result.Value)
-        {
-            throw new HubException($"Unknown error {Context.ConnectionId}");
-        }
-        var chats = await _mediator.Send(new GetChatQuery(userId.Value));
-        if (chats.IsFailure)
-        {
-            throw new HubException(chats.Error);
-        }
-        foreach (var chat in chats.Value.Chats)
+        var chats = await _mediator.Send(new GetChatQuery(userId));
+        foreach (var chat in chats.Chats)
         {
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, chat.PublicId.ToString());    
         }
@@ -88,12 +63,8 @@ public class ChatHub: Microsoft.AspNetCore.SignalR.Hub
     public async Task SendNotificationToUser(Guid chatId, Guid userId ,NotificationModel model)
     {
         var users = await _mediator.Send(new GetUsersInChatQuery(chatId:chatId));
-        if (users.IsFailure)
-        {
-            throw new HubException(users.Error);
-        }
-
-        foreach (var user in users.Value)
+        
+        foreach (var user in users)
         {
             if (user.PublicId != userId)
             {
@@ -107,17 +78,14 @@ public class ChatHub: Microsoft.AspNetCore.SignalR.Hub
     public async Task SendMessage(CreateMessage message)
     {
         var result = await _mediator.Send(new CreateMessageCommand(message));
-        if (result.IsFailure)
-        {
-            throw new HubException(result.Error);
-        }
+
         // Рассылаем сообщение всем участникам чата
-        await Clients.Group(message.ChatId.ToString()).SendAsync("ReceiveMessage", result.Value);
+        await Clients.Group(message.ChatId.ToString()).SendAsync("ReceiveMessage", result);
         await SendNotificationToUser(message.ChatId,  message.UserId,new NotificationModel()
         {
             Title = "New Message",
-            UserName = result.Value.Username,
-            Date = result.Value.Timestamp,
+            UserName = result.Username,
+            Date = result.Timestamp,
         });
     }
 

@@ -1,7 +1,7 @@
 using MediatR;
 using profile_API.HostedService.Notification.Command;
-using profile_Application.Chat.GetUsersInChat;
 using profile_Application.Chat.Query.CheckMessage;
+using profile_Application.Chat.Query.GetUsersInChat;
 using profile_MapperModel.Profile.Chat;
 
 namespace profile_API.HostedService;
@@ -27,19 +27,12 @@ public class MessageCheckerService : BackgroundService
             {
                 var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
                 var result = await mediator.Send(new CheckMessageQuery(DateTime.UtcNow));
-
-                if (result.IsFailure)
-                {
-                    _logger.LogWarning("Check Failed: {Error}", result.Error);
-                }
-                else
-                {
-                    foreach (var message in result.Value)
+                
+                    foreach (var message in result)
                     {
                         var users = await mediator.Send(new GetUsersInChatQuery(message.ChatId));
-                        if (users.IsSuccess)
-                        {
-                            foreach (var user in users.Value)
+
+                            foreach (var user in users)
                             {
                                 _logger.LogInformation("Processing message: {MessageId}", message.PublicId);
 
@@ -53,14 +46,9 @@ public class MessageCheckerService : BackgroundService
                                     _logger.LogInformation("Message {MessageId} sent successfully", message.PublicId);
                                 }
                             }
-                        }
-                        else
-                        {
-                            _logger.LogWarning("Failed to get users for chat {ChatId}: {Error}", message.ChatId, users.Error);
-                        }
                     }
 
-                }
+                
             }
 
             _logger.LogInformation("Service Sleep at {Time}", DateTime.UtcNow);

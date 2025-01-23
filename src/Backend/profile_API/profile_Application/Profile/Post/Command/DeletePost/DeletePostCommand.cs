@@ -3,7 +3,7 @@ using profile_Application.Core.Commands.Contracts;
 
 namespace profile_Application.Profile.Post.Command.DeletePost;
 
-public class DeletePostCommand : ICommand<Result<bool>>
+public class DeletePostCommand : ICommand<bool>
 {
     public Guid PostId { get; }
     public Guid UserId { get; }

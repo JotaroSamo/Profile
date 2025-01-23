@@ -37,7 +37,7 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(ReactiveFormsModule),
     AUTH_INTERCEPTOR,
     provideHttpClient(withInterceptorsFromDi()), ErrorState, BrowserAnimationsModule,
-    provideAnimations(), chips, MatChipsModule, provideAnimationsAsync(), NgModule
+    provideAnimations(), chips, MatChipsModule, provideAnimationsAsync(), NgModule, provideAnimationsAsync()
   ]
 };
 

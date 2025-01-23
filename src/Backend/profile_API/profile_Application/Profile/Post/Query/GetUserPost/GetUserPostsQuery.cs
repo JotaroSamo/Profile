@@ -4,7 +4,7 @@ using profile_MapperModel.Profile.User;
 
 namespace profile_Application.Profile.Post.GetUserPost;
 
-public class GetUserPostsQuery : IQuery<Result<UserPosts>>
+public class GetUserPostsQuery : IQuery<UserPosts>
 {
     public Guid UserId { get; }
 

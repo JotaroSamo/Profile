@@ -4,7 +4,7 @@ using profile_Core.Model;
 
 namespace profile_Application.Profile.User.LoginUser;
 
-public class LoginUserCommand : ICommand<Result<JwtModel>>
+public class LoginUserCommand : ICommand<JwtModel>
 {
     public profile_MapperModel.Profile.User.LoginUser LoginUser { get; }
 

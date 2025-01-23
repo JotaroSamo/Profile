@@ -4,12 +4,13 @@ using profile_Core.JWT;
 using profile_Core.Model;
 using profile_Core.Password;
 using profile_Core.Profile;
+using profile_Domain.Exception;
 
 namespace profile_Application.Profile.User.LoginUser;
 
 using Microsoft.Extensions.Logging;
 
-public class LoginUserCommandHandler : ICommandHandler<LoginUserCommand, Result<JwtModel>>
+public class LoginUserCommandHandler : ICommandHandler<LoginUserCommand, JwtModel>
 {
     private readonly IUserService _userService;
     private readonly IJwtService _jwtService;
@@ -24,7 +25,7 @@ public class LoginUserCommandHandler : ICommandHandler<LoginUserCommand, Result<
         _logger = logger;
     }
 
-    public async Task<Result<JwtModel>> Handle(LoginUserCommand command, CancellationToken cancellationToken)
+    public async Task<JwtModel> Handle(LoginUserCommand command, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Attempting to login user {Login}", command.LoginUser.Login);
 
@@ -32,7 +33,7 @@ public class LoginUserCommandHandler : ICommandHandler<LoginUserCommand, Result<
         if (user == null)
         {
             _logger.LogWarning("Login attempt failed: user not found for {Login}", command.LoginUser.Login);
-            return Result.Failure<JwtModel>("Invalid username or password");
+            throw new ProfileException(404, $"Login attempt failed: user not found for {command.LoginUser.Login}");
         }
 
         var hashModel = new HashModel()
@@ -44,11 +45,11 @@ public class LoginUserCommandHandler : ICommandHandler<LoginUserCommand, Result<
         if (!_passwordService.VerifyPassword(hashModel, command.LoginUser.Password))
         {
             _logger.LogWarning("Login attempt failed: invalid password for user {Login}", command.LoginUser.Login);
-            return Result.Failure<JwtModel>("Invalid username or password");
+            throw new ProfileException(404, $"Login attempt failed: invalid password for user {command.LoginUser.Login}");
         }
 
         var token = _jwtService.GenerateJwtToken(user.PublicId, user.Login);
         _logger.LogInformation("User {Login} logged in successfully.", command.LoginUser.Login);
-        return Result.Success(token);
+        return token;
     }
 }

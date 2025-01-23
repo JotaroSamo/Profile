@@ -1,14 +1,14 @@
 using CSharpFunctionalExtensions;
+using Microsoft.Extensions.Logging;
 using profile_Application.Core.Commands.Contracts;
 using profile_Core.Chat;
 using profile_Domain.Chat;
+using profile_Domain.Exception;
 using profile_MapperModel.Profile.Chat;
 
-namespace profile_Application.Chat.CreateMessage;
+namespace profile_Application.Chat.Command.CreateMessage;
 
-using Microsoft.Extensions.Logging;
-
-public class CreateMessageCommandHandler : ICommandHandler<CreateMessageCommand, Result<BaseMessage>>
+public class CreateMessageCommandHandler : ICommandHandler<CreateMessageCommand, BaseMessage>
 {
     private readonly IMessageService _messageService;
     private readonly ILogger<CreateMessageCommandHandler> _logger;
@@ -19,7 +19,7 @@ public class CreateMessageCommandHandler : ICommandHandler<CreateMessageCommand,
         _logger = logger;
     }
 
-    public async Task<Result<BaseMessage>> Handle(CreateMessageCommand request, CancellationToken cancellationToken)
+    public async Task<BaseMessage> Handle(CreateMessageCommand request, CancellationToken cancellationToken)
     {
         // Создание сообщения с валидацией
         _logger.LogInformation("Creating message in chat {ChatId} from user {UserId}.", request.CreateMessage.ChatId, request.CreateMessage.UserId);
@@ -30,7 +30,7 @@ public class CreateMessageCommandHandler : ICommandHandler<CreateMessageCommand,
         if (createdMessageResult.IsFailure)
         {
             _logger.LogWarning("Message creation failed: {Error}", createdMessageResult.Error);
-            return Result.Failure<BaseMessage>(createdMessageResult.Error);
+            throw new ProfileException(400,createdMessageResult.Error);
         }
 
         // Создание сообщения в сервисе
@@ -40,13 +40,13 @@ public class CreateMessageCommandHandler : ICommandHandler<CreateMessageCommand,
         if (message.IsFailure)
         {
             _logger.LogError("Failed to save message: {Error}", message.Error);
-            return Result.Failure<BaseMessage>(message.Error);
+            throw new ProfileException(500,message.Error);
         }
 
 
         // Возвращение успешно созданного сообщения
         _logger.LogInformation("Message created successfully with ID: {MessageId}.", message.Value.PublicId);
-        return Result.Success(message.Value);
+        return message.Value;
     }
 
     

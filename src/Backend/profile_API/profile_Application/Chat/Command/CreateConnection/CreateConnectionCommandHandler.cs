@@ -3,13 +3,14 @@ using profile_Application.Core.Commands.Contracts;
 using profile_Core.Chat;
 using profile_Core.Contracts;
 using profile_Domain.Chat;
+using profile_Domain.Exception;
 using profile_MapperModel.Profile.Chat;
 
 namespace profile_Application.Chat.CreateConnection;
 
 using Microsoft.Extensions.Logging;
 
-public class CreateConnectionCommandHandler : ICommandHandler<CreateConnectionCommand, Result<BaseUserChatConnection>>
+public class CreateConnectionCommandHandler : ICommandHandler<CreateConnectionCommand, BaseUserChatConnection>
 {
     private readonly IUserChatConnectionService _userChatConnectionService;
     private readonly IHttpContextService _httpContextService;
@@ -22,7 +23,7 @@ public class CreateConnectionCommandHandler : ICommandHandler<CreateConnectionCo
         _logger = logger;
     }
 
-    public async Task<Result<BaseUserChatConnection>> Handle(CreateConnectionCommand request, CancellationToken cancellationToken)
+    public async Task<BaseUserChatConnection> Handle(CreateConnectionCommand request, CancellationToken cancellationToken)
     {
         var userId = _httpContextService.GetCurrentUserGuid().Value;
 
@@ -30,7 +31,7 @@ public class CreateConnectionCommandHandler : ICommandHandler<CreateConnectionCo
         if (userId == Guid.Empty)
         {
             _logger.LogWarning("User not found when trying to create connection.");
-            return Result.Failure<BaseUserChatConnection>("User not found");
+            throw new ProfileException(404, "User not found");
         }
 
         _logger.LogInformation("Creating connection for User ID: {UserId} with Connection ID: {ConnectionId} and Chat ID: {ChatId}.", userId, request.ConnectionId, request.ChatId);
@@ -41,7 +42,7 @@ public class CreateConnectionCommandHandler : ICommandHandler<CreateConnectionCo
         if (connection.IsFailure)
         {
             _logger.LogWarning("Invalid connection attempt: {Error}", connection.Error);
-            return Result.Failure<BaseUserChatConnection>("Invalid connection");
+            throw new ProfileException(500,"Invalid connection");
         }
 
         var connect = await _userChatConnectionService.CreateConnection(connection.Value);
@@ -50,10 +51,10 @@ public class CreateConnectionCommandHandler : ICommandHandler<CreateConnectionCo
         if (connect.IsFailure)
         {
             _logger.LogError("Failed to save connection: {Error}", connect.Error);
-            return Result.Failure<BaseUserChatConnection>("Failed to create connection");
+            throw new ProfileException(500,"Failed to create connection");
         }
 
         _logger.LogInformation("Successfully created a connection with ID: {ConnectionId}.", connect.Value);
-        return Result.Success(connect.Value);
+        return connect.Value;
     }
 }

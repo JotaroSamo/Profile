@@ -1,10 +1,9 @@
-using CSharpFunctionalExtensions;
 using profile_Application.Core.Commands.Contracts;
 using profile_MapperModel.Profile.Chat;
 
-namespace profile_Application.Chat.CreateMessage;
+namespace profile_Application.Chat.Command.CreateMessage;
 
-public class CreateMessageCommand : ICommand<Result<BaseMessage>>
+public class CreateMessageCommand : ICommand<BaseMessage>
 {
     public profile_MapperModel.Profile.Chat.CreateMessage CreateMessage { get; }
 

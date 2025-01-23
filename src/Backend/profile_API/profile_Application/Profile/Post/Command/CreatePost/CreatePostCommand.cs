@@ -4,7 +4,7 @@ using profile_MapperModel.Profile.Post;
 
 namespace profile_Application.Profile.Post.CreatePost;
 
-public class CreatePostCommand : ICommand<Result<BasePost>>
+public class CreatePostCommand : ICommand<BasePost>
 {
     public profile_MapperModel.Profile.Post.CreatePost Post { get; }
     public Guid UserId { get; }

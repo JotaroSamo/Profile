@@ -1,13 +1,13 @@
-using CSharpFunctionalExtensions;
+using Microsoft.Extensions.Logging;
+using profile_Application.Chat.CreateChat;
 using profile_Application.Core.Commands.Contracts;
 using profile_Core.Chat;
+using profile_Domain.Exception;
 using profile_MapperModel.Profile.Chat;
 
-namespace profile_Application.Chat.CreateChat;
+namespace profile_Application.Chat.Command.CreateChat;
 
-using Microsoft.Extensions.Logging;
-
-public class CreateChatCommandHandler : ICommandHandler<CreateChatCommand, Result<BaseChat>>
+public class CreateChatCommandHandler : ICommandHandler<CreateChatCommand, BaseChat>
 {
     private readonly IChatService _chatService;
     private readonly ILogger<CreateChatCommandHandler> _logger;
@@ -18,7 +18,7 @@ public class CreateChatCommandHandler : ICommandHandler<CreateChatCommand, Resul
         _logger = logger;
     }
 
-    public async Task<Result<BaseChat>> Handle(CreateChatCommand request, CancellationToken cancellationToken)
+    public async Task<BaseChat> Handle(CreateChatCommand request, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Creating chat with title '{Title}' for users {UserIds}.", request.CreateChat.Title, string.Join(", ", request.CreateChat.UsersIds));
 
@@ -29,7 +29,7 @@ public class CreateChatCommandHandler : ICommandHandler<CreateChatCommand, Resul
         if (createChatResult.IsFailure)
         {
             _logger.LogWarning("Failed to create chat: {Error}", createChatResult.Error);
-            return Result.Failure<BaseChat>(createChatResult.Error);
+            throw new ProfileException(500, createChatResult.Error);
         }
 
         // Создание чата в сервисе
@@ -39,13 +39,13 @@ public class CreateChatCommandHandler : ICommandHandler<CreateChatCommand, Resul
         if (chatResult.IsFailure)
         {
             _logger.LogError("Error saving chat: {Error}", chatResult.Error);
-            return Result.Failure<BaseChat>(chatResult.Error);
+            throw new ProfileException(500, chatResult.Error);
         }
 
         _logger.LogInformation("Chat '{Title}' created successfully with ID {ChatId}.", request.CreateChat.Title, chatResult.Value.PublicId);
         
         // Возвращение успешно созданного чата
-        return chatResult;
+        return chatResult.Value;
     }
 }
 

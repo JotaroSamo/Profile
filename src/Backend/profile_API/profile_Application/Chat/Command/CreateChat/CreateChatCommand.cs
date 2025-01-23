@@ -4,7 +4,7 @@ using profile_MapperModel.Profile.Chat;
 
 namespace profile_Application.Chat.CreateChat;
 
-public class CreateChatCommand : ICommand<Result<BaseChat>>
+public class CreateChatCommand : ICommand<BaseChat>
 {
     public profile_MapperModel.Profile.Chat.CreateChat CreateChat { get; }
 

@@ -33,11 +33,8 @@ public class PostController : ControllerBase
             return BadRequest("Not authorized");
         }
         var result = await _mediator.Send(new GetUserPostsQuery(publicID.Value));
-        if (result.IsFailure)
-        {
-            return BadRequest(result.Error);
-        }
-        return Ok(result.Value);
+      
+        return Ok(result);
     }
     [HttpPost("create")]
     public async Task<IActionResult> Create(CreatePost post)
@@ -48,11 +45,7 @@ public class PostController : ControllerBase
             return BadRequest("Not authorized");
         }
         var result = await _mediator.Send(new CreatePostCommand(post, publicID.Value));
-        if (result.IsFailure)
-        {
-            return BadRequest(result.Error);
-        }
-        return Ok(result.Value);
+        return Ok(result);
     }
 
     [HttpDelete("delete/{postId}")]
@@ -64,11 +57,7 @@ public class PostController : ControllerBase
             return BadRequest("Not authorized");
         }
         var result = await _mediator.Send(new DeletePostCommand(postId, publicID.Value));
-        if (result.IsFailure)
-        {
-            return BadRequest(result.Error);
-        }
-        return Ok(result.Value);
+        return Ok(result);
     }
 
 }

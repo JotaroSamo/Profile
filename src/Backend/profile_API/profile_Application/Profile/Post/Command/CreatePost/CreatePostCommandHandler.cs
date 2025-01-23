@@ -1,13 +1,14 @@
 using CSharpFunctionalExtensions;
 using profile_Application.Core.Commands.Contracts;
 using profile_Core.Profile;
+using profile_Domain.Exception;
 using profile_MapperModel.Profile.Post;
 
 namespace profile_Application.Profile.Post.CreatePost;
 
 using Microsoft.Extensions.Logging;
 
-public class CreatePostCommandHandler : ICommandHandler<CreatePostCommand, Result<BasePost>>
+public class CreatePostCommandHandler : ICommandHandler<CreatePostCommand, BasePost>
 {
     private readonly IPostService _postService;
     private readonly ILogger<CreatePostCommandHandler> _logger;
@@ -18,7 +19,7 @@ public class CreatePostCommandHandler : ICommandHandler<CreatePostCommand, Resul
         _logger = logger;
     }
 
-    public async Task<Result<BasePost>> Handle(CreatePostCommand command, CancellationToken cancellationToken)
+    public async Task<BasePost> Handle(CreatePostCommand command, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Handling CreatePostRequest for user {UserId}", command.UserId);
         
@@ -27,7 +28,7 @@ public class CreatePostCommandHandler : ICommandHandler<CreatePostCommand, Resul
         if (createPost.IsFailure)
         {
             _logger.LogError("Failed to create post: {Error}", createPost.Error);
-            return Result.Failure<BasePost>(createPost.Error);
+            throw new ProfileException(400, createPost.Error);
         }
 
         _logger.LogInformation("Creating post for user {UserId}", command.UserId);
@@ -36,10 +37,10 @@ public class CreatePostCommandHandler : ICommandHandler<CreatePostCommand, Resul
         if (post.IsFailure)
         {
             _logger.LogError("Failed to save post: {Error}", post.Error);
-            return Result.Failure<BasePost>(post.Error);
+            throw new ProfileException(400, post.Error);
         }
 
         _logger.LogInformation("Post created successfully with ID: {PostId}", post.Value.PublicId);
-        return post;
+        return post.Value;
     }
 }

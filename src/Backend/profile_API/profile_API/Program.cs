@@ -7,6 +7,7 @@ using profile_API.Hub;
 using profile_API.Infastructure;
 using profile_API.Infastructure.Configuration;
 using profile_API.Middleware;
+using profile_Application.Profile.User.Command.CreateUser;
 using profile_Application.Profile.User.CreateUser;
 using profile_Core.Contracts;
 using profile_Core.Model;

@@ -5,7 +5,7 @@ using profile_MapperModel.Profile.User;
 
 namespace profile_Application.Chat.GetAll;
 
-public class GetAllQuery : IQuery<Result<List<AllUserData>>>
+public class GetAllQuery : IQuery<List<AllUserData>>
 {
     public GetAllQuery()
     {

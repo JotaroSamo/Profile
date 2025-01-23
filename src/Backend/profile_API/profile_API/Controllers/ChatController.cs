@@ -28,11 +28,7 @@ public class ChatController : ControllerBase
             return BadRequest();
         createChat.UsersIds.Add(_httpContextService.GetCurrentUserGuid().Value);
         var result = await _mediator.Send(new CreateChatCommand(createChat));
-        if (result.IsFailure)
-        {
-            return BadRequest(result.Error);
-        }
-        return Ok(result.Value);
+        return Ok(result);
         
     }
     [HttpGet("get-user-chats")]
@@ -42,11 +38,8 @@ public class ChatController : ControllerBase
         if (userId == Guid.Empty)
             return BadRequest();
         var result = await _mediator.Send(new GetChatQuery(userId));
-        if (result.IsFailure)
-        {
-            return BadRequest(result.Error);
-        }
-        return Ok(result.Value);
+        
+        return Ok(result);
         
     }
 }
