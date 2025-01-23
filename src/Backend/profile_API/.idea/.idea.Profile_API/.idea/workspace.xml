@@ -170,12 +170,12 @@
     &quot;assignee&quot;: &quot;JotaroSamo&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/JotaroSamo/Profile.git",
-    "accountId": "5c54af8c-92dd-4fd6-a8e1-73a8f7699773"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JotaroSamo/Profile.git&quot;,
+    &quot;accountId&quot;: &quot;5c54af8c-92dd-4fd6-a8e1-73a8f7699773&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/profile_API/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/a.samoshuk/RiderProjects/Profile/src/Backend/profile_API/profile_API/obj/Debug/net9.0/profile_API.GlobalUsings.g.cs" root0="SKIP_HIGHLIGHTING" />
